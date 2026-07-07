@@ -1,0 +1,140 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  border-bottom: 1px solid var(--sbm-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.top-row {
+  background: #ffffff;
+}
+
+.brand-name-bold {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--sbm-navy);
+  text-transform: uppercase;
+}
+
+.brand-name-light {
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: var(--sbm-blue);
+}
+
+.top-links a {
+  color: var(--sbm-muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.top-links a:hover {
+  color: var(--sbm-navy);
+}
+
+.btn-internet-banking {
+  background-color: #0b3471;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #0b3471;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-internet-banking:hover {
+  background-color: #082b5c;
+  transform: translateY(-1px);
+}
+
+/* Bottom Row Styling */
+.bottom-row {
+  background-color: #00abdf;
+}
+
+.bottom-links {
+  white-space: nowrap;
+}
+
+.bottom-links a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 0;
+  position: relative;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  transition: opacity 0.2s ease;
+}
+
+.bottom-links a:hover {
+  opacity: 0.9;
+}
+
+.bottom-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.bottom-links a:hover::after,
+.bottom-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Search Bar Styling */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper input {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 0.35rem 2.2rem 0.35rem 1rem;
+  color: #ffffff;
+  font-size: 0.85rem;
+  width: 13rem;
+  transition: all 0.25s ease;
+}
+
+.search-input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-input-wrapper input:focus {
+  background-color: #ffffff;
+  color: var(--sbm-ink);
+  outline: none;
+  border-color: #ffffff;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-input-wrapper input:focus + .search-btn {
+  color: var(--sbm-blue);
+}
+
+

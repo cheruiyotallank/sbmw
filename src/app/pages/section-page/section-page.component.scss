@@ -1,0 +1,227 @@
+.section-shell {
+  padding: 1rem 0 2rem;
+}
+
+.section-shell[class*='tone-'] {
+  --tone-start: #0b3471;
+  --tone-end: #1aa3d8;
+  --tone-soft: rgba(26, 163, 216, 0.12);
+}
+
+.tone-about {
+  --tone-start: #0b3471;
+  --tone-end: #1aa3d8;
+}
+
+.tone-investors,
+.tone-markets {
+  --tone-start: #0f4c81;
+  --tone-end: #14b8a6;
+}
+
+.tone-impact,
+.tone-green {
+  --tone-start: #115e59;
+  --tone-end: #22c55e;
+}
+
+.tone-jobs,
+.tone-people {
+  --tone-start: #5b21b6;
+  --tone-end: #ec4899;
+}
+
+.tone-help,
+.tone-answers,
+.tone-contact {
+  --tone-start: #0b3471;
+  --tone-end: #4f8ecf;
+}
+
+.tone-login,
+.tone-secure {
+  --tone-start: #081f43;
+  --tone-end: #1668a2;
+}
+
+.tone-business,
+.tone-corporate {
+  --tone-start: #143d64;
+  --tone-end: #2ec4b6;
+}
+
+.tone-personal,
+.tone-retail,
+.tone-global,
+.tone-insurance {
+  --tone-start: #0b3471;
+  --tone-end: #f59e0b;
+}
+
+.section-hero,
+.content-card {
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--sbm-border);
+  box-shadow: 0 18px 42px rgba(12, 32, 63, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.content-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 55px rgba(12, 32, 63, 0.15);
+  border-color: rgba(26, 163, 216, 0.35);
+}
+
+.section-hero {
+  padding: 2rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--tone-start) 8%, #ffffff) 0%, color-mix(in srgb, var(--tone-end) 8%, #ffffff) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto -6rem -8rem auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--tone-soft), transparent 68%);
+}
+
+.section-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+  .section-hero {
+    padding: 1.5rem;
+  }
+
+  .hero-stat {
+    padding: 0.9rem 1rem;
+  }
+
+  .design-chip-row {
+    gap: 0.45rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sbm-blue);
+}
+
+h1,
+h2 {
+  font-weight: 800;
+  color: var(--sbm-ink);
+}
+
+h1 {
+  margin-bottom: 0.75rem;
+}
+
+p {
+  color: var(--sbm-muted);
+}
+
+.summary {
+  max-width: 62ch;
+}
+
+.content-card {
+  padding: 1.5rem;
+}
+
+.accent-card {
+  background: linear-gradient(135deg, var(--tone-start), var(--tone-end));
+}
+
+.accent-card h2,
+.accent-card p {
+  color: #fff;
+}
+
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pill-grid span {
+  display: inline-flex;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #eef7fb;
+  color: var(--sbm-navy);
+  font-weight: 700;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-stat {
+  padding: 1rem 1.1rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(216, 227, 238, 0.9);
+  box-shadow: 0 16px 35px rgba(12, 32, 63, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.hero-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(12, 32, 63, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.hero-stat span {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--sbm-muted);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+
+.hero-stat strong {
+  color: var(--sbm-ink);
+  font-size: 1.08rem;
+}
+
+.design-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.design-chip-row span {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-weight: 700;
+}
+
+.spotlight-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfe 100%);
+}

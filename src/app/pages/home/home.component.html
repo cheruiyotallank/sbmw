@@ -1,0 +1,387 @@
+<!-- Persistent Parallax Backdrop Shapes -->
+<div class="parallax-backdrop">
+  <div class="parallax-decor-blob-1"></div>
+  <div class="parallax-decor-blob-2"></div>
+</div>
+
+<section class="hero-section">
+  <div class="container-fluid px-4 px-xl-5 py-4 py-lg-5 position-relative overflow-hidden">
+    <div class="hero-shape hero-shape-one"></div>
+    <div class="hero-shape hero-shape-two"></div>
+    <div class="hero-ribbon d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+      <div class="ribbon-copy">
+        <span>News</span>
+        <p>Access your accounts securely and carry out transactions 24/7 on SBM Mfukoni Online.</p>
+      </div>
+      <div class="ribbon-actions d-flex flex-wrap gap-2">
+        <a routerLink="/internet-banking" class="pill-link">Mfukoni Online</a>
+        <a routerLink="/support" class="pill-link">Branch Locator</a>
+        <a routerLink="/contact-us" class="pill-link">Talk to Us</a>
+      </div>
+    </div>
+
+    <div class="row align-items-center g-4 position-relative hero-grid">
+      <!-- Left Column (CTA Button only) -->
+      <div class="col-lg-4 d-flex align-items-center justify-content-center py-4">
+        <a [routerLink]="slides[activeSlide].ctaLink" class="btn btn-learn-more">
+          {{ slides[activeSlide].ctaLabel }} <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      
+      <!-- Right Column (Angled Slide Graphic Banner) -->
+      <div class="col-lg-8">
+        <div class="hero-panel-wrapper">
+          <div class="hero-panel-angled">
+            <!-- Left side blue/cyan gradient overlay text -->
+            <div class="angled-content-box">
+              <span class="angled-badge">{{ slides[activeSlide].eyebrow }}</span>
+              <h2>{{ slides[activeSlide].title }}</h2>
+              <p class="angled-desc">{{ slides[activeSlide].description }}</p>
+              <div class="angled-details" *ngIf="slides[activeSlide].subDetail">
+                {{ slides[activeSlide].subDetail }}
+              </div>
+              
+              <!-- Dots Indicator -->
+              <div class="carousel-indicators-angled">
+                <button
+                  type="button"
+                  *ngFor="let slide of slides; index as index"
+                  class="carousel-dot-angled"
+                  [class.active]="index === activeSlide"
+                  (click)="selectSlide(index)"
+                  [attr.aria-label]="'Go to slide ' + (index + 1)">
+                </button>
+              </div>
+            </div>
+            
+            <!-- Graphic background clip and child picture floated to the right -->
+            <div class="angled-graphic-box">
+              <div class="angled-divider-border"></div>
+              <div class="angled-image-bg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Forex Rates Ticker -->
+<div class="forex-bar container-fluid py-2 d-flex align-items-center gap-3">
+  <div class="forex-title px-4">FOREX</div>
+  <div class="forex-ticker-container flex-grow-1 overflow-hidden position-relative">
+    <div class="forex-ticker-inner d-flex align-items-center gap-4">
+      <div class="rate-item"><strong>USD:</strong> Buying: 127.20 , Selling: 133.00</div>
+      <div class="rate-item"><strong>GBP:</strong> Buying: 165.20 , Selling: 180.20</div>
+      <div class="rate-item"><strong>EUR:</strong> Buying: 142.50 , Selling: 156.80</div>
+      <div class="rate-item"><strong>ZAR:</strong> Buying: 6.70 , Selling: 9.70</div>
+      <div class="rate-item"><strong>CAD:</strong> Buying: 87.05 , Selling: 99.05</div>
+      <div class="rate-item"><strong>AUD:</strong> Buying: 82.15 , Selling: 96.35</div>
+      <div class="rate-item"><strong>JPY:</strong> Buying: 0.750 , Selling: 0.850</div>
+      <div class="rate-item"><strong>INR:</strong> Buying: -- , Selling: 1.525</div>
+      <div class="rate-item"><strong>MUR:</strong> Buying: 2.24 , Selling: 3.39</div>
+      <div class="rate-item"><strong>CNY:</strong> Buying: 14.45 , Selling: 22.75</div>
+      <div class="rate-item"><strong>AED:</strong> Buying: 31.20 , Selling: 39.20</div>
+      <div class="rate-item"><strong>TZS:</strong> Buying: 24.85 , Selling: 12.85</div>
+      <div class="rate-item"><strong>UGX:</strong> Buying: 30.75 , Selling: 22.40</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid px-4 px-xl-5 text-center mt-5 mb-2">
+  <h2 class="section-title-smarter fw-bold">Banking Solutions for a Smarter Tomorrow</h2>
+</div>
+
+<section id="solutions" class="section-block">
+  <div class="container-fluid px-4 px-xl-5">
+    
+    <!-- Solutions for You -->
+    <div class="row g-4 solutions-row mb-5 scroll-reveal-effect">
+      <div class="col-lg-3 solutions-sidebar">
+        <h2 class="solutions-header">Solutions <span class="accent-text">for You</span></h2>
+        <div class="accent-underline"></div>
+        <p class="solutions-desc">
+          With SBM Bank, you can open a bank account from home and enjoy the convenience of secure digital banking apps in Kenya, tailored to support your financial goals.
+        </p>
+        <a routerLink="/for-you" class="view-all-link">ALL PRODUCTS FOR YOU <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="col-lg-9">
+        <div class="row g-3 card-scroll-row flex-nowrap overflow-auto py-2">
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Access a quick loan</h3>
+              <p>Get cash in real time for your financial emergencies</p>
+              <a routerLink="/for-you" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Get a pay day advance on your salary</h3>
+              <p>Get an early pay day by taking an advance on your salary</p>
+              <a routerLink="/for-you" class="btn btn-card-accent">APPLY NOW <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Budget your recurrent expenses with a prepaid card</h3>
+              <p>Budget your recurrent expenses with an SBM prepaid card</p>
+              <a routerLink="/for-you" class="btn btn-card-primary">APPLY NOW <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for your Business -->
+    <div class="row g-4 solutions-row mb-5 scroll-reveal-effect">
+      <div class="col-lg-3 solutions-sidebar">
+        <h2 class="solutions-header">Solutions <span class="accent-text">for your Business</span></h2>
+        <div class="accent-underline"></div>
+        <p class="solutions-desc">
+          Let our global banking experts help as you enter new markets, capitalize on cross-border opportunities and maximize international revenues.
+        </p>
+        <a routerLink="/for-business" class="view-all-link">ALL PRODUCTS FOR YOUR BUSINESS <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="col-lg-9">
+        <div class="row g-3 card-scroll-row flex-nowrap overflow-auto py-2">
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Use only what you need, when you need it</h3>
+              <p>Friendly terms that let you pay for only what you use</p>
+              <a routerLink="/for-business" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Mobile money payments to your account instantly</h3>
+              <p>Collect cashless payments easily, straight to your SBM Bank account using one of the most reliable banking apps in Kenya.</p>
+              <a routerLink="/for-business" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Are you looking to get upto KES 5M loan</h3>
+              <p>Enjoy great loan limits of up to KES 5 Million for the growth of your enterprise</p>
+              <a routerLink="/for-business" class="btn btn-card-primary">APPLY NOW <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for Corporate -->
+    <div class="row g-4 solutions-row scroll-reveal-effect">
+      <div class="col-lg-3 solutions-sidebar">
+        <h2 class="solutions-header">Solutions <span class="accent-text">for Corporate</span></h2>
+        <div class="accent-underline"></div>
+        <p class="solutions-desc">
+          Besides keeping track of your company's expenses, profit from professional advisory and opportunities that will facilitate you with the resources for successful project execution.
+        </p>
+        <a routerLink="/for-corporate" class="view-all-link">ALL PRODUCTS FOR CORPORATE <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="col-lg-9">
+        <div class="row g-3 card-scroll-row flex-nowrap overflow-auto py-2">
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Insure my company's assets</h3>
+              <p>Protect your commercial physical assets and liabilities with custom coverages.</p>
+              <a routerLink="/for-corporate" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Invest in my business</h3>
+              <p>Acquire treasury products, deposits, and strategic investment options.</p>
+              <a routerLink="/for-corporate" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Get funds to run my company</h3>
+              <p>Access customized debt solutions, structured trade finance, and working capital lines.</p>
+              <a routerLink="/for-corporate" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for Diaspora -->
+    <div class="row g-4 solutions-row mt-5 scroll-reveal-effect">
+      <div class="col-lg-3 solutions-sidebar">
+        <h2 class="solutions-header">Solutions <span class="accent-text">for Diaspora</span></h2>
+        <div class="accent-underline"></div>
+        <p class="solutions-desc">
+          With finances now global due to technology, you can leverage on the investment opportunities back home while managing your wealth and transactions.
+        </p>
+        <a routerLink="/diaspora" class="view-all-link">ALL PRODUCTS FOR DIASPORA <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="col-lg-9">
+        <div class="row g-3 card-scroll-row flex-nowrap overflow-auto py-2">
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Save money while abroad</h3>
+              <p>Put money away for future security when you settle back home</p>
+              <a routerLink="/diaspora" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Invest back home while abroad</h3>
+              <p>Send money back home for investment through our transfer services</p>
+              <a routerLink="/diaspora" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+          <div class="col-md-4 col-sm-6 flex-shrink-0 card-col">
+            <article class="product-card">
+              <h3>Quick financial boost while abroad</h3>
+              <p>Great loans with quick turnaround time between application and facilitation</p>
+              <a routerLink="/diaspora" class="btn btn-card-primary">OPEN AN ACCOUNT <i class="fa fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- <!-- SBM Elite Banking Feature -->
+<section id="elite-banking" class="scroll-reveal-effect py-0 overflow-hidden">
+  <div class="container-fluid px-0">
+    <div class="row g-0 align-items-stretch">
+      
+      <!-- Left Column (White Background) -->
+      <div class="col-lg-6 d-flex flex-column justify-content-center bg-white p-5 p-xl-6 elite-left-side">
+        <h2 class="solutions-header">SBM Elite <span class="gold-text">Banking</span></h2>
+        <div class="accent-underline gold-underline"></div>
+        <p class="solutions-desc mb-4">
+          You deserve the type of banking that understands your needs and structures solutions that perfectly fit into your lifestyle.
+        </p>
+        <a routerLink="/for-you" class="explore-more-gold-link mb-5">EXPLORE MORE <i class="fa fa-arrow-right"></i></a>
+        
+        <!-- Businessman Image asset -->
+        <div class="elite-image-wrapper overflow-hidden">
+          <div class="elite-image-part">
+            <div class="elite-image-overlay-graphic"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column (Dark Blue Background) -->
+      <div class="col-lg-6 p-5 p-xl-6 text-white d-flex flex-column justify-content-center elite-right-side">
+        <h3 class="elite-benefits-title text-white mb-4">Enjoy Elite Banking Benefits</h3>
+        
+        <div class="row g-4 elite-benefits-grid">
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-diamond"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Wealth Management Solutions</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-user-circle"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Dedicated Relationship Manager</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-phone"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Dedicated support</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-star"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Exclusive privileges</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-sliders"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Personalized solutions</h4>
+            </div>
+          </div>
+          <div class="col-sm-6 d-flex align-items-start gap-3">
+            <span class="gold-bullet-icon"><i class="fa fa-globe"></i></span>
+            <div class="benefit-detail">
+              <h4 class="text-white fw-bold mb-1">Global access to your account</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Tools & Apps Row -->
+<section id="tools-and-apps" class="section-block alt-block scroll-reveal-effect">
+  <div class="container-fluid px-4 px-xl-5">
+    
+    <!-- Tools Row -->
+    <div class="tools-section mb-5">
+      <h2 class="section-header-navy mb-4">Tools to bank with ease</h2>
+      <div class="row g-3">
+        <div class="col-lg-3 col-md-6">
+          <div class="navy-tool-card">
+            <div class="tool-icon-circle"><i class="fa fa-map-marker"></i></div>
+            <span>SBM Branch, ATM or Agent near me</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="navy-tool-card">
+            <div class="tool-icon-circle"><i class="fa fa-file-pdf-o"></i></div>
+            <span>Resources</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="navy-tool-card">
+            <div class="tool-icon-circle"><i class="fa fa-phone"></i></div>
+            <span>Contact Us</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="navy-tool-card">
+            <div class="tool-icon-circle"><i class="fa fa-question-circle"></i></div>
+            <span>Frequently Asked Questions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apps Row -->
+    <div class="apps-download-section pt-4">
+      <div class="row g-5 align-items-center">
+        <!-- Mobile App Card -->
+        <div class="col-lg-6 d-flex align-items-center gap-4 app-display-card">
+          <div class="app-icon-visual">
+            <div class="favicon-icon-sbm">SBM</div>
+          </div>
+          <div class="app-info-visual">
+            <h3>SBM Mfukoni Mobile App</h3>
+            <p>Stay connected, enjoy convenience and peace of mind</p>
+            <div class="app-badges-row d-flex gap-2">
+              <a href="#" class="store-badge-dark"><i class="fa fa-play"></i> GET IT ON Google Play</a>
+              <a href="#" class="store-badge-dark"><i class="fa fa-apple"></i> Download on the App Store</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internet Banking Card -->
+        <div class="col-lg-6 d-flex align-items-center gap-4 app-display-card">
+          <div class="app-laptop-visual">
+            <i class="fa fa-laptop laptop-visual-icon"></i>
+          </div>
+          <div class="app-info-visual">
+            <h3>SBM Internet Banking</h3>
+            <p>Stay connected, enjoy convenience and peace of mind</p>
+            <a routerLink="/internet-banking" class="btn btn-sbm-login">LOG IN <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

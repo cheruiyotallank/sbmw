@@ -1,0 +1,61 @@
+<section class="section-shell tone-{{ toneClass }}">
+  <div class="container-fluid px-4 px-xl-5 py-5">
+    <div class="section-hero">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <span class="eyebrow">{{ accent }}</span>
+          <h1>{{ title }}</h1>
+          <p>{{ subtitle }}</p>
+          <p class="summary">{{ summary }}</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a routerLink="/" class="btn btn-sbm-primary">Back to home</a>
+            <a routerLink="/support" class="btn btn-sbm-accent">Visit support</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="hero-stats">
+            <div class="hero-stat" *ngFor="let stat of statCards">
+              <span>{{ stat.label }}</span>
+              <strong>{{ stat.value }}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-lg-7">
+        <div class="content-card">
+          <h2>What this page will cover</h2>
+          <div class="pill-grid">
+            <span *ngFor="let item of highlights">{{ item }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="content-card accent-card">
+          <h2>At Your Service</h2>
+          <p>
+            Our Customer Service Charter ensures that you receive secure, transparent, and prompt banking support across all SBM digital systems and branch networks.
+          </p>
+          <div class="design-chip-row">
+            <span>24/7 Support</span>
+            <span>Secure Access</span>
+            <span>CBK Regulated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-12">
+        <div class="content-card spotlight-card">
+          <h2>Security & Fraud Awareness</h2>
+          <p>
+            Protect your digital security. SBM Bank Kenya will never ask for your Mfukoni Online password, credit card PIN, or transaction OTP via SMS, telephone, or email. Report any suspicious alerts to our support channels immediately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

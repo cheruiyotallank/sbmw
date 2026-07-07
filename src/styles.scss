@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --sbm-navy: #0b3471;
+  --sbm-blue: #1aa3d8;
+  --sbm-sky: #eaf7fc;
+  --sbm-ink: #10233b;
+  --sbm-muted: #5f6b7a;
+  --sbm-card: #ffffff;
+  --sbm-border: #d8e3ee;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--sbm-ink);
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sbm-navy);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sbm-blue);
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: rgba(26, 163, 216, 0.2);
+  color: var(--sbm-navy);
+}
+
+.btn-sbm-primary,
+.btn-sbm-accent {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              box-shadow 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+.btn-sbm-primary {
+  background: var(--sbm-navy);
+  color: #fff;
+}
+
+.btn-sbm-primary:hover {
+  background: #082b5c;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(11, 52, 113, 0.25);
+}
+
+.btn-sbm-accent {
+  background: var(--sbm-blue);
+  color: #fff;
+}
+
+.btn-sbm-accent:hover {
+  background: #158bba;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 163, 216, 0.25);
+}
+
+.btn-sbm-primary:active,
+.btn-sbm-accent:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Shimmer Sweep Effect */
+.btn-sbm-primary::after,
+.btn-sbm-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.btn-sbm-primary:hover::after,
+.btn-sbm-accent:hover::after {
+  animation: shine-sweep 0.85s ease-in-out;
+}
+
+@keyframes shine-sweep {
+  100% {
+    left: 150%;
+  }
+}
+
+/* Global Scroll reveal wipe animation */
+@keyframes revealScreenInPlace {
+  from {
+    clip-path: inset(25% 0% 25% 0%); 
+    opacity: 0.8;
+  }
+  to {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+  }
+}
+
+.scroll-reveal-effect {
+  animation: revealScreenInPlace linear both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 35%;
+}
+

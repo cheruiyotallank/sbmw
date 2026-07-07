@@ -1,0 +1,53 @@
+<header class="topbar">
+  <!-- Top Row (White Background) -->
+  <div class="top-row container-fluid px-4 px-xl-5 py-2 d-flex align-items-center justify-content-between">
+    <a class="brand d-flex align-items-center gap-2" routerLink="/">
+      <div class="brand-logo-container d-flex align-items-center gap-1">
+        <div class="brand-mark">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 20H32V80H15V20Z" fill="#0b3471"/>
+            <path d="M39 20H56V80H39V20Z" fill="#00abdf"/>
+            <path d="M63 20H80V80H63V20Z" fill="#0b3471"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name-bold">SBM</span> <span class="brand-name-light">bank</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="top-row-right d-none d-lg-flex align-items-center gap-4">
+      <nav class="top-links d-flex align-items-center gap-4">
+        <a routerLink="/about-us">About Us</a>
+        <a routerLink="/investor-relations">Investor Relations</a>
+        <a routerLink="/sustainability">Sustainability</a>
+        <a routerLink="/careers">Careers</a>
+        <a routerLink="/support">Support</a>
+        <a routerLink="/newsroom">Newsroom</a>
+      </nav>
+      <a routerLink="/internet-banking" class="btn btn-internet-banking">Internet Banking</a>
+    </div>
+  </div>
+
+  <!-- Bottom Row (Cyan Background) -->
+  <div class="bottom-row">
+    <div class="container-fluid px-4 px-xl-5 d-flex align-items-center justify-content-between py-2">
+      <nav class="bottom-links d-flex align-items-center gap-3 gap-xl-4 overflow-auto">
+        <a routerLink="/for-you" routerLinkActive="active">For You</a>
+        <a routerLink="/for-business" routerLinkActive="active">For Your Business</a>
+        <a routerLink="/for-corporate" routerLinkActive="active">For Corporate</a>
+        <a routerLink="/diaspora" routerLinkActive="active">Diaspora</a>
+        <a routerLink="/support" routerLinkActive="active">Ways of Banking</a>
+        <a routerLink="/treasury" routerLinkActive="active">Treasury</a>
+        <a routerLink="/bancassurance" routerLinkActive="active">Bancassurance</a>
+      </nav>
+      
+      <div class="search-box-container d-none d-md-block">
+        <div class="search-input-wrapper">
+          <input type="text" placeholder="Search..." aria-label="Search" />
+          <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
