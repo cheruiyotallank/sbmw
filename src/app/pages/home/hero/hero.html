@@ -10,29 +10,19 @@
   </ng-container>
 
   <!-- Content Container -->
-  <div class="container-fluid px-4 px-xl-5 h-100 position-relative z-index-2 d-flex flex-column pb-5 pt-4">
+  <div class="container-fluid px-4 px-xl-5 h-100 position-relative z-index-2 d-flex flex-column">
+    <!-- Hero Ribbon at the top -->
   
-    <!-- Text (Left Middle) -->
-    <div class="row flex-grow-1 align-items-center hero-content-row">
-      <div class="col-lg-7 col-xl-5 hero-text-content text-start ps-4 ps-md-5">
-        <div class="slide-content-wrapper position-relative" style="min-height: 100px;">
+    <!-- Text and CTA -->
+    <div class="row flex-grow-1 align-items-center pb-5 hero-content-row">
+      <div class="col-lg-7 col-xl-5 hero-text-content text-center text-lg-start ps-4 ps-md-5">
+        <!-- Animated Slide Content -->
+        <div class="slide-content-wrapper position-relative" style="min-height: 150px;">
           <ng-container *ngFor="let slide of slides; let i = index">
             <div class="slide-content w-100" [class.active-content]="i === activeSlide">
-              <h1 class="hero-main-title mb-0" *ngIf="slide.title" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1;">{{ slide.title }}</h1>
-            </div>
-          </ng-container>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Button (Left Bottom) -->
-    <div class="row align-items-end pb-3">
-      <div class="col-lg-7 col-xl-5 text-start ps-4 ps-md-5">
-        <div class="slide-content-wrapper position-relative" style="min-height: 50px;">
-          <ng-container *ngFor="let slide of slides; let i = index">
-            <div class="slide-content w-100" [class.active-content]="i === activeSlide">
+              <h1 class="hero-main-title mb-2" *ngIf="slide.title">{{ slide.title }}</h1>
               <div class="d-flex justify-content-start">
-                <a [routerLink]="slide.ctaLink" class="btn-hero-primary shadow-sm" style="padding: 1rem 2.5rem; font-size: 1rem;">
+                <a [routerLink]="slide.ctaLink" class="btn-hero-primary">
                   {{ slide.ctaLabel }} <i class="fa fa-chevron-right ms-2" style="font-size: 0.85em;"></i>
                 </a>
               </div>
@@ -41,7 +31,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Dots Indicator at bottom left -->
