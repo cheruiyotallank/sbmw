@@ -1,0 +1,49 @@
+<section class="hero-section full-width-hero">
+  <!-- Dynamic Full Width Background Images -->
+  <ng-container *ngFor="let slide of slides; let i = index">
+    <div 
+      class="hero-full-bg" 
+      [class.slide-active]="i === activeSlide"
+      [class.slide-previous]="i === previousSlideIndex"
+      [style.background-image]="'url(' + slide.image + ')'">
+    </div>
+  </ng-container>
+
+  <!-- Content Container -->
+  <div class="container-fluid px-4 px-xl-5 h-100 position-relative z-index-2 d-flex flex-column">
+    <!-- Hero Ribbon at the top -->
+  
+    <!-- Text and CTA -->
+    <div class="row flex-grow-1 align-items-center pb-5 hero-content-row">
+      <div class="col-lg-7 col-xl-5 hero-text-content text-center text-lg-start ps-4 ps-md-5">
+        <!-- Animated Slide Content -->
+        <div class="slide-content-wrapper position-relative" style="min-height: 150px;">
+          <ng-container *ngFor="let slide of slides; let i = index">
+            <div class="slide-content w-100" [class.active-content]="i === activeSlide">
+              <h1 class="hero-main-title mb-2" *ngIf="slide.title">{{ slide.title }}</h1>
+              <div class="d-flex justify-content-start">
+                <a [routerLink]="slide.ctaLink" class="btn-hero-primary">
+                  {{ slide.ctaLabel }} <i class="fa fa-chevron-right ms-2" style="font-size: 0.85em;"></i>
+                </a>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots Indicator at bottom left -->
+  <div class="position-absolute z-index-2" style="bottom: 30px; left: 40px;">
+    <div class="carousel-indicators-angled mb-0">
+      <button
+        type="button"
+        *ngFor="let slide of slides; index as index"
+        class="carousel-dot-angled dark-dot"
+        [class.active]="index === activeSlide"
+        (click)="selectSlide(index)"
+        [attr.aria-label]="'Go to slide ' + (index + 1)">
+      </button>
+    </div>
+  </div>
+</section>

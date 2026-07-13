@@ -1,0 +1,210 @@
+/* Tools to bank with ease */
+.section-header-navy {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--sbm-navy);
+}
+
+.navy-tool-btn {
+  display: flex;
+  align-items: center;
+  background-color: #315383; /* Exact blue from screenshot */
+  color: #ffffff !important;
+  padding: 1.15rem 1.25rem;
+  border-radius: 4px; /* Slight border radius */
+  text-decoration: none;
+  min-height: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  &:hover, &:focus {
+    background-color: var(--sbm-navy); /* Noticeable shift to Deep SBM Navy */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(11, 52, 113, 0.3);
+    outline: none;
+  }
+}
+
+.tool-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  color: #ffffff;
+}
+
+.tool-text {
+  font-weight: 600; /* Matching screenshot weight */
+  font-size: 0.92rem;
+  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.tool-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tool-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  flex-grow: 1;
+}
+
+.tool-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  color: #ffffff;
+}
+
+/* Beautiful, Professional Card Layout for Tools & Apps */
+.banking-tool-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(11, 52, 113, 0.08);
+  border: 1px solid rgba(11, 52, 113, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(11, 52, 113, 0.12);
+    border-color: rgba(26, 163, 216, 0.2);
+  }
+}
+
+.tool-logo-img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  transition: transform 0.3s ease;
+
+  .banking-tool-card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.tool-laptop-img {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+
+  .banking-tool-card:hover & {
+    transform: scale(1.05) rotate(-2deg);
+  }
+}
+
+.app-info-visual {
+  h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--sbm-navy);
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: var(--sbm-muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+}
+
+/* Badge specific styling */
+.app-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.store-badge-link {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+}
+
+.store-badge-img {
+  height: 48px; /* Slightly larger default to ensure it loads visibly */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* User specifically wanted Apple Store image larger */
+.apple-badge {
+  height: 58px; /* Noticeably larger relative to google play */
+}
+
+/* Enhance login button */
+.btn-sbm-login {
+  background: linear-gradient(135deg, var(--sbm-navy), #082b5c);
+  color: #fff !important;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 15px rgba(11, 52, 113, 0.2);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(135deg, var(--sbm-blue), #008eb9); /* SBM Light Blue */
+    box-shadow: 0 10px 20px rgba(0, 171, 223, 0.3);
+    transform: translateY(-2px);
+    color: #fff !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 575.98px) {
+  .banking-tool-card {
+    padding: 1.5rem;
+  }
+  .card-content {
+    justify-content: center;
+    text-align: center;
+  }
+  .app-badges-row {
+    justify-content: center;
+  }
+}

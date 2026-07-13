@@ -1,0 +1,278 @@
+/* Modern Centered Header Pattern */
+.centered-header-pattern {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.5rem 0 2rem 0;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(26, 163, 216, 0.1);
+  color: var(--sbm-navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.pill-badge .dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--sbm-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--sbm-blue);
+}
+
+.massive-title {
+  font-weight: 900;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--sbm-ink);
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.text-sbm-accent {
+  color: var(--sbm-blue);
+}
+
+.lead-text {
+  font-size: 1.15rem;
+  color: var(--sbm-muted);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Floating Decorations */
+.floating-decor {
+  position: absolute;
+  font-size: 2rem;
+  color: var(--sbm-blue);
+  opacity: 0.2;
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.decor-1 { top: 0; left: -10%; animation-delay: 0s; }
+.decor-2 { bottom: 10%; right: -5%; animation-delay: 2s; font-size: 1.5rem; }
+.decor-3 { top: 20%; right: -10%; animation-delay: 4s; color: var(--sbm-navy); font-size: 2.5rem; }
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Redesigned solutions row */
+.solutions-section-block {
+  padding-top: 0.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(216, 227, 238, 0.5);
+}
+
+.solutions-section-block:last-child {
+  border-bottom: none;
+}
+
+/* Make sure cards look good in the grid */
+.product-card {
+  height: 100%;
+  text-align: left;
+}
+
+.card-grid {
+  justify-content: center;
+}
+
+/* Premium Image Card Styling */
+.product-card.image-card-layout {
+  height: 100%;
+  text-align: center; /* Centered text */
+  background-color: #ffffff;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card.image-card-layout:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(12, 32, 63, 0.08);
+  border-color: #d1dfed;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle at center, rgba(230, 240, 250, 0.4) 0%, transparent 80%);
+}
+
+.card-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.06));
+}
+
+.product-card.image-card-layout:hover .card-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-content-body {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sbm-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.card-content-body p {
+  font-size: 0.85rem;
+  color: var(--sbm-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-action-container {
+  margin-top: auto;
+  border-top: 1px solid #f0f4f8;
+  padding: 1.25rem 1.5rem; /* Better padding for button */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the button */
+  background-color: #fcfdfe;
+}
+
+.btn-action-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff; /* White text */
+  background-color: var(--sbm-blue); /* Solid blue background */
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.5rem;
+  border-radius: 99px; /* Pill shape */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 163, 216, 0.2);
+}
+
+.btn-action-primary i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-action-primary:hover {
+  background-color: var(--sbm-navy);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(11, 52, 113, 0.25);
+}
+
+.product-card.image-card-layout:hover .btn-action-primary {
+  background-color: var(--sbm-navy);
+}
+
+.product-card.image-card-layout:hover .btn-action-primary i {
+  transform: translateX(4px);
+}
+
+/* Main Overarching Title Styling */
+.main-solutions-title {
+  display: block;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  color: var(--sbm-navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 auto 1rem auto;
+  max-width: 1200px;
+  text-align: center !important; /* Ensure it overrides any default h1 rules */
+  width: 100%;
+}
+
+.main-solutions-title .gradient-text {
+  background: linear-gradient(135deg, var(--sbm-blue), #50d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+.solutions-subtitle {
+  font-size: 1.25rem;
+  color: var(--sbm-muted);
+  max-width: 600px;
+  margin: 0 auto 0.5rem auto;
+}
+
+/* Floating Hero Image Layout (Option 1 Header) */
+.floating-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.floating-image-bg-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100%, 360px);
+  height: 360px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(26, 163, 216, 0.08), rgba(80, 213, 255, 0.15));
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: 0;
+  animation: morphing-blob 12s ease-in-out infinite alternate;
+}
+
+@keyframes morphing-blob {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(-50%, -50%) rotate(5deg); }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(-50%, -50%) rotate(-5deg); }
+}
+
+.floating-hero-img {
+  position: relative;
+  z-index: 1;
+  max-height: 380px;
+  object-fit: contain;
+  animation: dynamic-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(16, 35, 59, 0.12));
+}
+
+@keyframes dynamic-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}

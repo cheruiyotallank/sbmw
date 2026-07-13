@@ -1,0 +1,268 @@
+<div class="container-fluid px-4 px-xl-5 text-center mt-4 mb-0">
+  <h1 class="main-solutions-title fx-reveal-item" appScrollReveal>
+    Banking Solutions <span class="gradient-text"> for a Smarter Tomorrow</span>
+  </h1>
+  <p class="solutions-subtitle fx-reveal-item fx-delay-1" appScrollReveal>Discover our comprehensive suite of financial products</p>
+</div>
+
+<section id="solutions" class="section-block pt-2">
+  <div class="container-fluid px-4 px-xl-5">
+    
+
+    <!-- Solutions for You -->
+    <div id="for-you" class="solutions-section-block mb-5 text-center pt-0 mt-3">
+      
+      <!-- Asymmetric Header (Option 1) -->
+      <div class="row align-items-center mb-4 text-start px-2 px-md-4">
+        <!-- Left Side: Text -->
+        <div class="col-lg-7 position-relative z-1 pe-lg-5">
+          <i class="fa fa-leaf floating-decor decor-1"></i>
+          
+          <div class="pill-badge fx-reveal-item" appScrollReveal>
+            <span class="dot"></span> Designed for Individuals
+          </div>
+          
+          <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal>
+            Solutions <span class="text-sbm-accent">for You</span>
+          </h2>
+          
+          <p class="lead-text fx-reveal-item fx-delay-2" appScrollReveal>
+            With SBM Bank, you can open a bank account from home and enjoy the convenience of secure digital banking apps in Kenya, tailored to support your financial goals.
+          </p>
+        </div>
+        
+        <!-- Right Side: Floating Colorful Image -->
+        <div class="col-lg-5 mt-5 mt-lg-0 position-relative text-center fx-reveal-item fx-delay-2" appScrollReveal>
+          <div class="floating-image-wrapper">
+            <!-- Professional Organic Blob Background -->
+            <div class="floating-image-bg-shape"></div>
+            
+            <img src="assets/sbmPhotos/bankingSolutionForYou.png" alt="Banking Solutions for You" class="img-fluid floating-hero-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sliding Cards -->
+      <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
+        <!-- The Scrollable Container -->
+        <div #sliderContainer class="d-flex gap-4 overflow-hidden hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem;">
+          <!-- Iterating over the new cards array -->
+          <div *ngFor="let card of forYouCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+            <article class="product-card image-card-layout fx-asymmetric-float">
+              <div class="card-image-wrapper">
+                <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
+              </div>
+              <div class="card-content-body">
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.desc }}</p>
+                <div class="card-action-container">
+                  <a routerLink="/for-you" class="btn-action-primary">{{ card.btnText }} <i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows at Bottom Right -->
+        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+          <button (click)="onPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button (click)="onNextClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Next">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for your Business -->
+    <div id="for-business" class="solutions-section-block mb-5 text-center pt-0 mt-3">
+      
+      <!-- Asymmetric Header (Option 1) -->
+      <div class="row align-items-center mb-4 text-start px-2 px-md-4">
+        <!-- Left Side: Text -->
+        <div class="col-lg-7 position-relative z-1 pe-lg-5">
+          <i class="fa fa-briefcase floating-decor decor-1"></i>
+          
+          <div class="pill-badge fx-reveal-item" appScrollReveal>
+            <span class="dot"></span> Designed for Growth
+          </div>
+          
+          <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal>
+            Solutions <span class="text-sbm-accent">for your Business</span>
+          </h2>
+          
+          <p class="lead-text fx-reveal-item fx-delay-2" appScrollReveal>
+            Let our global banking experts help as you enter new markets, capitalize on cross-border opportunities and maximize international revenues.
+          </p>
+        </div>
+        
+        <!-- Right Side: Floating Colorful Image -->
+        <div class="col-lg-5 mt-5 mt-lg-0 position-relative text-center fx-reveal-item fx-delay-2" appScrollReveal>
+          <div class="floating-image-wrapper" style="padding: 0;">
+            <img src="assets/sbmPhotos/bankingSolutionForBusiness.png" alt="Banking Solutions for Business" class="img-fluid floating-hero-img" style="max-height: 450px; width: 100%; object-fit: contain; filter: drop-shadow(0 25px 40px rgba(16, 35, 59, 0.15)); transform: scale(1.1);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sliding Cards -->
+      <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
+        <!-- The Scrollable Container -->
+        <div #businessSliderContainer class="d-flex gap-4 overflow-hidden hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem;">
+          <!-- Iterating over the new cards array -->
+          <div *ngFor="let card of forBusinessCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+            <article class="product-card image-card-layout fx-asymmetric-float">
+              <div class="card-image-wrapper">
+                <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
+              </div>
+              <div class="card-content-body">
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.desc }}</p>
+                <div class="card-action-container">
+                  <a routerLink="/for-business" class="btn-action-primary">{{ card.btnText }} <i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows at Bottom Right -->
+        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+          <button (click)="onBusinessPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button (click)="onBusinessNextClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Next">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for Corporate -->
+    <div id="for-corporate" class="solutions-section-block mb-5 text-center pt-0 mt-3">
+      
+      <!-- Asymmetric Header (Option 1) -->
+      <div class="row align-items-center mb-4 text-start px-2 px-md-4">
+        <!-- Left Side: Text -->
+        <div class="col-lg-7 position-relative z-1 pe-lg-5">
+          <i class="fa fa-building floating-decor decor-1"></i>
+          
+          <div class="pill-badge fx-reveal-item" appScrollReveal>
+            <span class="dot"></span> Designed for Enterprise
+          </div>
+          
+          <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal>
+            Solutions <span class="text-sbm-accent">for Corporate</span>
+          </h2>
+          
+          <p class="lead-text fx-reveal-item fx-delay-2" appScrollReveal>
+            Besides keeping track of your company's expenses, profit from professional advisory and opportunities that will facilitate you with the resources for successful project execution.
+          </p>
+        </div>
+        
+        <!-- Right Side: Floating Image -->
+        <div class="col-lg-5 mt-5 mt-lg-0 position-relative text-center fx-reveal-item fx-delay-2" appScrollReveal>
+          <div class="floating-image-wrapper" style="padding: 0;">
+            <img src="assets/sbmPhotos/bankingSolutionForCorporate.png" alt="Banking Solutions for Corporate" class="img-fluid floating-hero-img" style="max-height: 450px; width: 100%; object-fit: contain; filter: drop-shadow(0 25px 40px rgba(16, 35, 59, 0.15)); transform: scale(1.1);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sliding Cards -->
+      <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
+        <!-- The Scrollable Container -->
+        <div #corporateSliderContainer class="d-flex gap-4 overflow-hidden hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem;">
+          <!-- Iterating over the new cards array -->
+          <div *ngFor="let card of forCorporateCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+            <article class="product-card image-card-layout fx-asymmetric-float">
+              <div class="card-image-wrapper">
+                <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
+              </div>
+              <div class="card-content-body">
+                <h3>{{ card.title }}</h3>
+                <p *ngIf="card.desc">{{ card.desc }}</p>
+                <div class="card-action-container">
+                  <a routerLink="/for-corporate" class="btn-action-primary">{{ card.btnText }} <i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows at Bottom Right -->
+        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+          <button (click)="onCorporatePrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button (click)="onCorporateNextClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Next">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solutions for Diaspora -->
+    <div id="diaspora" class="solutions-section-block mb-5 text-center pt-0 mt-3">
+      
+      <!-- Asymmetric Header (Option 1) -->
+      <div class="row align-items-center mb-4 text-start px-2 px-md-4">
+        <!-- Left Side: Text -->
+        <div class="col-lg-7 position-relative z-1 pe-lg-5">
+          <i class="fa fa-plane floating-decor decor-1"></i>
+          
+          <div class="pill-badge fx-reveal-item" appScrollReveal>
+            <span class="dot"></span> Designed for Expats
+          </div>
+          
+          <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal>
+            Solutions <span class="text-sbm-accent">for Diaspora</span>
+          </h2>
+          
+          <p class="lead-text fx-reveal-item fx-delay-2" appScrollReveal>
+            With finances now global due to technology, you can leverage on the investment opportunities back home while managing your wealth and transactions.
+          </p>
+        </div>
+        
+        <!-- Right Side: Floating Image -->
+        <div class="col-lg-5 mt-5 mt-lg-0 position-relative text-center fx-reveal-item fx-delay-2" appScrollReveal>
+          <div class="floating-image-wrapper" style="padding: 0;">
+            <img src="assets/sbmPhotos/bankingSolutionForDiaspora.png" alt="Banking Solutions for Diaspora" class="img-fluid floating-hero-img" style="max-height: 450px; width: 100%; object-fit: contain; filter: drop-shadow(0 25px 40px rgba(16, 35, 59, 0.15)); transform: scale(1.1);">
+          </div>
+        </div>
+      </div>
+
+      <!-- Sliding Cards -->
+      <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
+        <!-- The Scrollable Container -->
+        <div #diasporaSliderContainer class="d-flex gap-4 overflow-hidden hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem;">
+          <!-- Iterating over the new cards array -->
+          <div *ngFor="let card of forDiasporaCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+            <article class="product-card image-card-layout fx-asymmetric-float">
+              <div class="card-image-wrapper">
+                <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
+              </div>
+              <div class="card-content-body">
+                <h3>{{ card.title }}</h3>
+                <p *ngIf="card.desc">{{ card.desc }}</p>
+                <div class="card-action-container">
+                  <a routerLink="/diaspora" class="btn-action-primary">{{ card.btnText }} <i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Navigation Arrows at Bottom Right -->
+        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+          <button (click)="onDiasporaPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button (click)="onDiasporaNextClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Next">
+            <i class="fa fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
