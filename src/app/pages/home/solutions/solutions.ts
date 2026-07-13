@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 
+import { DragScrollDirective } from '../../../shared/directives/drag-scroll.directive';
+
 @Component({
   selector: 'app-solutions',
-  imports: [CommonModule, RouterLink, ScrollRevealDirective],
+  imports: [CommonModule, RouterLink, ScrollRevealDirective, DragScrollDirective],
   templateUrl: './solutions.html',
   styleUrl: './solutions.scss',
   standalone: true
