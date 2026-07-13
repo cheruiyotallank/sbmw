@@ -19,10 +19,10 @@
           <div class="slide-content-wrapper position-relative">
             <ng-container *ngFor="let slide of slides; let i = index">
               <div class="slide-content w-100" [class.active-content]="i === activeSlide">
-                <h1 class="hero-main-title mb-3" *ngIf="slide.title" style="font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em;">{{ slide.title }}</h1>
+                <h1 class="hero-main-title mb-3" *ngIf="slide.title" style="font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900; letter-spacing: -0.02em; color: var(--sbm-navy);">{{ slide.title }}</h1>
                 <div class="d-flex justify-content-start">
-                  <a [routerLink]="slide.ctaLink" class="btn-hero-primary shadow-lg">
-                    {{ slide.ctaLabel }} <i class="fa fa-chevron-right ms-2" style="font-size: 0.85em;"></i>
+                  <a [routerLink]="slide.ctaLink" class="btn-learn-more shadow-lg">
+                    {{ slide.ctaLabel }} <i class="fa fa-arrow-right ms-2" style="font-size: 0.9em;"></i>
                   </a>
                 </div>
               </div>

@@ -12,22 +12,22 @@ import { RouterLink } from '@angular/router';
 export class Hero implements OnInit, OnDestroy {
   readonly slides = [
     {
-      title: 'Welcome to SBM', // Three words
+      title: '', // No title on left for Turtle bank slide
       ctaLabel: 'CLICK TO LEARN MORE',
-      ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo1.png'
+      ctaLink: '/turtle-bank',
+      image: 'assets/sbmPhotos/first.png'
     },
     {
-      title: '', // No specific text requested
-      ctaLabel: 'Discover more',
-      ctaLink: '/for-business',
-      image: 'assets/sbmPhotos/Photo2.jpg'
+      title: '', // No title on left for Tuma For Free slide
+      ctaLabel: 'DISCOVER MORE',
+      ctaLink: '/tuma-for-free',
+      image: 'assets/sbmPhotos/second.png'
     },
     {
-      title: 'Fly Across Kenya With Jambojet',
+      title: 'Fly Seamlessly Across Kenya with Jambojet',
       ctaLabel: 'CLICK TO LEARN MORE',
-      ctaLink: '/support',
-      image: 'assets/sbmPhotos/photo3.jpg'
+      ctaLink: '/jambojet',
+      image: 'assets/sbmPhotos/third.png'
     },
     {
       title: '', // No specific text requested
