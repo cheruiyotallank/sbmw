@@ -17,7 +17,10 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
           this.observer.unobserve(this.el.nativeElement);
         }
       });
-    }, { threshold: 0.15 }); // Trigger when 15% of the element is visible
+    }, { 
+      rootMargin: '0px 0px 50px 0px', // Trigger slightly before it enters the viewport
+      threshold: 0.0 
+    });
 
     this.observer.observe(this.el.nativeElement);
   }
