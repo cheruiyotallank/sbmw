@@ -173,8 +173,8 @@ h1 {
 
 /* Full Width Hero */
 .full-width-hero {
-  min-height: calc(100vh - 190px);
-  max-height: 700px;
+  height: calc(100vh - 182px);
+  min-height: 400px;
   position: relative;
   overflow: hidden;
   padding: 0;
