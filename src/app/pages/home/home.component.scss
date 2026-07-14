@@ -174,7 +174,7 @@ h1 {
 /* Full Width Hero */
 .full-width-hero {
   height: calc(100vh - 182px);
-  min-height: 200px;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -201,8 +201,9 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: cover;
-  background-position: center 20%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 0;
   opacity: 0;
   transform: translateX(-100%);
