@@ -173,8 +173,6 @@ h1 {
 
 /* Full Width Hero */
 .full-width-hero {
-  height: calc(100vh - 182px);
-  min-height: 400px;
   position: relative;
   overflow: hidden;
   padding: 0;
@@ -195,18 +193,20 @@ h1 {
   }
 }
 
-.hero-full-bg {
+.hero-full-img {
+  width: 100%;
+  height: auto; /* Allows automatic height scaling to preserve aspect ratio */
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 0;
   opacity: 0;
   transform: translateX(-100%);
+}
+
+.hero-full-img.slide-active {
+  position: relative;
 }
 
 .slide-previous {
@@ -266,7 +266,7 @@ h1 {
 }
 
 .hero-main-title {
-  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
   line-height: 1.25;
   font-weight: 800;
   color: #1f2937;

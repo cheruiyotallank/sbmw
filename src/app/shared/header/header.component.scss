@@ -15,24 +15,25 @@
 
 .brand-name-bold {
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--sbm-navy);
   text-transform: uppercase;
 }
 
 .brand-name-light {
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--sbm-blue);
 }
 
 .top-links a {
   color: var(--sbm-navy);
-  font-weight: 400;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 0.95rem;
   line-height: 1.2;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.5rem 0;
 }
 
 .top-links a:hover {
@@ -41,26 +42,37 @@
 }
 
 .btn-internet-banking {
-  background-color: #0b3471;
+  background-color: var(--sbm-navy);
   color: #ffffff !important;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   border-radius: 999px;
-  padding: 0.6rem 1.8rem;
-  border: 1px solid #0b3471;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  padding: 0.65rem 2rem;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-internet-banking i {
+  font-size: 0.9em;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .btn-internet-banking:hover {
   background-color: var(--sbm-blue);
-  border-color: var(--sbm-blue);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(26, 163, 216, 0.3);
+  box-shadow: 0 8px 22px rgba(26, 163, 216, 0.35);
+}
+
+.btn-internet-banking:hover i {
+  transform: translateY(-1px) scale(1.1);
+  color: #ffffff;
 }
 
 /* Bottom Row Styling */
 .bottom-row {
-  background: linear-gradient(90deg, #00abdf 0%, #158bba 100%);
+  background: #00abdf; /* Solid crisp maximum cyan */
 }
 
 .bottom-links {
@@ -80,20 +92,21 @@
 .bottom-links a {
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.5px;
   text-transform: capitalize;
   line-height: 1.15;
   text-align: left;
-  padding: 0.6rem 0;
+  padding: 0.7rem 0;
   position: relative;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-block;
 }
 
 .bottom-links a:hover {
-  opacity: 0.9;
+  color: #f0f8ff;
+  opacity: 1;
   transform: translateY(-2px);
 }
 
@@ -127,22 +140,25 @@
   background-color: transparent;
   border: 1px solid #ffffff;
   border-radius: 999px;
-  padding: 0.35rem 2.2rem 0.35rem 1rem;
+  padding: 0.45rem 2.5rem 0.45rem 1.2rem;
   color: #ffffff;
-  font-size: 0.85rem;
-  width: 13rem;
+  font-size: 0.95rem;
+  width: 15rem;
   transition: all 0.25s ease;
+  box-shadow: none;
 }
 
 .search-input-wrapper input::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .search-input-wrapper input:focus {
-  background-color: #ffffff;
-  color: var(--sbm-ink);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   outline: none;
   border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
 .search-btn {
@@ -150,13 +166,22 @@
   right: 0.8rem;
   background: transparent;
   border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover {
   color: #ffffff;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
+  transform: scale(1.15) rotate(-3deg);
+  cursor: pointer;
 }
 
 .search-input-wrapper input:focus + .search-btn {
-  color: var(--sbm-navy);
+  color: #ffffff;
 }
 
 /* Mega Menu Styles */

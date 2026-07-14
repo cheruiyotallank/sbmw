@@ -12,13 +12,13 @@ import { RouterLink } from '@angular/router';
 export class Hero implements OnInit, OnDestroy {
   readonly slides = [
     {
-      title: 'Welcome to SBM', // Three words
+      title: 'Welcome to SBM', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/for-you',
       image: 'assets/sbmPhotos/photo1.png'
     },
     {
-      title: '', // No specific text requested
+      title: 'Tuma For Free Na Pesalink', 
       ctaLabel: 'Discover more',
       ctaLink: '/for-business',
       image: 'assets/sbmPhotos/Photo2.jpg'
@@ -30,7 +30,7 @@ export class Hero implements OnInit, OnDestroy {
       image: 'assets/sbmPhotos/photo3.jpg'
     },
     {
-      title: '', // No specific text requested
+      title: 'Busara -> Kids Banking App', 
       ctaLabel: 'Learn more',
       ctaLink: '/for-you',
       image: 'assets/sbmPhotos/photo4.png'

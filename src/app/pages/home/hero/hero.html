@@ -1,16 +1,16 @@
 <section class="hero-section full-width-hero">
   <!-- Dynamic Full Width Background Images -->
   <ng-container *ngFor="let slide of slides; let i = index">
-    <div 
-      class="hero-full-bg" 
+    <img 
+      [src]="slide.image"
+      class="hero-full-img" 
       [class.slide-active]="i === activeSlide"
       [class.slide-previous]="i === previousSlideIndex"
-      [style.background-image]="'url(' + slide.image + ')'">
-    </div>
+      alt="">
   </ng-container>
 
   <!-- Content Container -->
-  <div class="container-fluid px-4 px-xl-5 h-100 position-relative z-index-2 d-flex flex-column" style="z-index: 5;">
+  <div class="container-fluid px-4 px-xl-5 position-absolute top-0 start-0 w-100 h-100 d-flex flex-column" style="z-index: 5;">
     <!-- Hero Ribbon at the top -->
   
     <!-- Text and CTA -->

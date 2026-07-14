@@ -42,9 +42,9 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #sliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem; cursor: grab;">
+        <div #sliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
           <!-- Iterating over the new cards array -->
-          <div *ngFor="let card of forYouCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+          <div *ngFor="let card of forYouCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
               <div class="card-image-wrapper">
                 <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
@@ -61,7 +61,7 @@
         </div>
         
         <!-- Navigation Arrows at Bottom Right -->
-        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+        <div class="d-flex justify-content-end gap-3 mt-1 pe-3">
           <button (click)="onPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
             <i class="fa fa-arrow-left"></i>
           </button>
@@ -105,9 +105,9 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #businessSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem; cursor: grab;">
+        <div #businessSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
           <!-- Iterating over the new cards array -->
-          <div *ngFor="let card of forBusinessCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+          <div *ngFor="let card of forBusinessCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
               <div class="card-image-wrapper">
                 <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
@@ -124,7 +124,7 @@
         </div>
         
         <!-- Navigation Arrows at Bottom Right -->
-        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+        <div class="d-flex justify-content-end gap-3 mt-1 pe-3">
           <button (click)="onBusinessPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
             <i class="fa fa-arrow-left"></i>
           </button>
@@ -168,9 +168,9 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #corporateSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem; cursor: grab;">
+        <div #corporateSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
           <!-- Iterating over the new cards array -->
-          <div *ngFor="let card of forCorporateCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+          <div *ngFor="let card of forCorporateCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
               <div class="card-image-wrapper">
                 <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
@@ -187,7 +187,7 @@
         </div>
         
         <!-- Navigation Arrows at Bottom Right -->
-        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+        <div class="d-flex justify-content-end gap-3 mt-1 pe-3">
           <button (click)="onCorporatePrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
             <i class="fa fa-arrow-left"></i>
           </button>
@@ -231,9 +231,9 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #diasporaSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 1rem; cursor: grab;">
+        <div #diasporaSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
           <!-- Iterating over the new cards array -->
-          <div *ngFor="let card of forDiasporaCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 20px;">
+          <div *ngFor="let card of forDiasporaCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
               <div class="card-image-wrapper">
                 <img *ngIf="card.image" [src]="card.image" [alt]="card.title" class="img-fluid">
@@ -250,7 +250,7 @@
         </div>
         
         <!-- Navigation Arrows at Bottom Right -->
-        <div class="d-flex justify-content-end gap-3 mt-4 pe-3">
+        <div class="d-flex justify-content-end gap-3 mt-1 pe-3">
           <button (click)="onDiasporaPrevClick()" class="btn rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 45px; height: 45px; background-color: var(--sbm-navy); color: white;" aria-label="Previous">
             <i class="fa fa-arrow-left"></i>
           </button>

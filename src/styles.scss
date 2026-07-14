@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --sbm-navy: #0b3471;
+  --sbm-navy: #06214d;
   --sbm-blue: #1aa3d8;
   --sbm-sky: #eaf7fc;
-  --sbm-ink: #10233b;
+  --sbm-ink: #06132b;
   --sbm-muted: #5f6b7a;
   --sbm-card: #ffffff;
   --sbm-border: #d8e3ee;
@@ -311,3 +311,12 @@ body.is-scrolling {
 .fx-delay-3 { transition-delay: 120ms; }
 .fx-delay-4 { transition-delay: 160ms; }
 .fx-delay-5 { transition-delay: 200ms; }
+
+/* Utility to completely hide scrollbars but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

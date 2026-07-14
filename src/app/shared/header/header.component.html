@@ -19,9 +19,10 @@
       <a routerLink="/careers">Careers</a>
       <a routerLink="/support">Support</a>
       <a routerLink="/newsroom">Newsroom</a>
-      <a routerLink="/blogs">Blogs</a>
     </nav>
-    <a routerLink="/internet-banking" class="btn btn-internet-banking d-none d-lg-block">Internet Banking</a>
+    <a routerLink="/internet-banking" class="btn btn-internet-banking d-none d-lg-flex align-items-center gap-2">
+      <i class="fa fa-lock"></i> Internet Banking
+    </a>
     
     <!-- Hamburger / Close Button for Mobile -->
     <button class="mobile-toggle d-block d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu" style="background: transparent; border: none; padding: 0;">
