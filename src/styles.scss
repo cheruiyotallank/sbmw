@@ -320,3 +320,158 @@ body.is-scrolling {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+/* Touch Target Accessibility - Minimum 44px */
+button, a, .btn, .nav-item, input[type="button"], input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure touch targets for smaller elements */
+.carousel-dot-angled,
+.search-toggle-btn,
+.hero-nav-btn,
+.transition-btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Touch-friendly spacing for inline elements */
+.top-links a,
+.bottom-links a,
+.mega-menu-link {
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Form inputs touch targets */
+input, select, textarea {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+}
+
+/* Mobile-specific touch improvements */
+@media (max-width: 767.98px) {
+  button, a, .btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .card-slide-item {
+    min-height: 48px;
+  }
+  
+  .nav-item {
+    min-height: 60px;
+    min-width: 60px;
+  }
+}
+
+/* Gradient Text Effects */
+.gradient-text {
+  background: linear-gradient(135deg, var(--sbm-blue), var(--sbm-navy));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.gradient-text-light {
+  background: linear-gradient(135deg, var(--sbm-blue), #4fc3f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Apply gradient text to headings */
+.hero-main-title,
+.brand-name-bold,
+.mega-menu-header,
+.card-title {
+  background: linear-gradient(135deg, var(--sbm-blue), var(--sbm-navy));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ripple Effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Hover Effects */
+.btn, button, a {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover, button:hover, a:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active, button:active, a:active {
+  transform: translateY(0);
+}
+
+/* Card Hover Effects */
+.product-card, .card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover, .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(11, 52, 113, 0.15);
+}
+
+/* Icon Hover Effects */
+.fa {
+  transition: all 0.2s ease;
+}
+
+button:hover .fa, a:hover .fa {
+  transform: scale(1.1);
+}
+
+/* Focus States for Accessibility */
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 163, 216, 0.3);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--sbm-blue);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--sbm-blue);
+  color: white;
+}

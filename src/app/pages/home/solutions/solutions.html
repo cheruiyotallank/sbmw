@@ -42,7 +42,12 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #sliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
+        <div #sliderContainer appDragScroll 
+             class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" 
+             style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;"
+             (touchstart)="onTouchStart($event, 'for-you')"
+             (touchmove)="onTouchMove($event)"
+             (touchend)="onTouchEnd($event, 'for-you')">
           <!-- Iterating over the new cards array -->
           <div *ngFor="let card of forYouCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
@@ -105,7 +110,12 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #businessSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
+        <div #businessSliderContainer appDragScroll 
+             class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" 
+             style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;"
+             (touchstart)="onTouchStart($event, 'business')"
+             (touchmove)="onTouchMove($event)"
+             (touchend)="onTouchEnd($event, 'business')">
           <!-- Iterating over the new cards array -->
           <div *ngFor="let card of forBusinessCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
@@ -168,7 +178,12 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #corporateSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
+        <div #corporateSliderContainer appDragScroll 
+             class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" 
+             style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;"
+             (touchstart)="onTouchStart($event, 'corporate')"
+             (touchmove)="onTouchMove($event)"
+             (touchend)="onTouchEnd($event, 'corporate')">
           <!-- Iterating over the new cards array -->
           <div *ngFor="let card of forCorporateCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">
@@ -231,7 +246,12 @@
       <!-- Sliding Cards -->
       <div class="position-relative mt-5 fx-reveal-item fx-delay-3" appScrollReveal>
         <!-- The Scrollable Container -->
-        <div #diasporaSliderContainer appDragScroll class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;">
+        <div #diasporaSliderContainer appDragScroll 
+             class="d-flex gap-4 overflow-x-auto hide-scrollbar text-start px-2" 
+             style="scroll-behavior: smooth; padding-bottom: 0.5rem; cursor: grab;"
+             (touchstart)="onTouchStart($event, 'diaspora')"
+             (touchmove)="onTouchMove($event)"
+             (touchend)="onTouchEnd($event, 'diaspora')">
           <!-- Iterating over the new cards array -->
           <div *ngFor="let card of forDiasporaCards" class="card-slide-item flex-shrink-0" style="width: min(85vw, 310px); padding-bottom: 10px;">
             <article class="product-card image-card-layout fx-asymmetric-float">

@@ -20,9 +20,11 @@
       <a routerLink="/support">Support</a>
       <a routerLink="/newsroom">Newsroom</a>
     </nav>
-    <a routerLink="/internet-banking" class="btn btn-internet-banking d-none d-lg-flex align-items-center gap-2">
-      <i class="fa fa-lock"></i> Internet Banking
-    </a>
+    <div class="d-none d-lg-flex align-items-center gap-3">
+      <a routerLink="/internet-banking" class="btn btn-internet-banking d-flex align-items-center gap-2">
+        <i class="fa fa-lock"></i> Internet Banking
+      </a>
+    </div>
     
     <!-- Hamburger / Close Button for Mobile -->
     <button class="mobile-toggle d-block d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu" style="background: transparent; border: none; padding: 0;">
@@ -35,7 +37,7 @@
     <div class="container-fluid px-4 px-xl-5 d-flex align-items-center justify-content-between py-2">
       <nav class="bottom-links d-flex align-items-center flex-grow-1 justify-content-between pe-4 pe-lg-5">
         <div class="nav-item-dropdown">
-          <a routerLink="/for-you" routerLinkActive="active">For <br class="d-xl-none"> You</a>
+          <a routerLink="/for-you" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 0)" tabindex="0">For <br class="d-xl-none"> You</a>
           
           <!-- Mega Menu Dropdown -->
           <div class="mega-menu shadow-lg">
@@ -100,7 +102,7 @@
         </div>
         
         <div class="nav-item-dropdown">
-          <a routerLink="/for-business" routerLinkActive="active">For Your <br class="d-xl-none"> Business</a>
+          <a routerLink="/for-business" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 1)" tabindex="0">For Your <br class="d-xl-none"> Business</a>
           
           <!-- For Your Business Mega Menu Dropdown -->
           <div class="mega-menu shadow-lg">
@@ -154,7 +156,7 @@
           </div>
         </div>
         <div class="nav-item-dropdown">
-          <a routerLink="/for-corporate" routerLinkActive="active">For <br class="d-xl-none"> Corporate</a>
+          <a routerLink="/for-corporate" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 2)" tabindex="0">For <br class="d-xl-none"> Corporate</a>
           
           <!-- For Corporate Mega Menu Dropdown -->
           <div class="mega-menu shadow-lg">
@@ -201,7 +203,7 @@
           </div>
         </div>
         <div class="nav-item-dropdown">
-          <a routerLink="/diaspora" routerLinkActive="active">Diaspora</a>
+          <a routerLink="/diaspora" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 3)" tabindex="0">Diaspora</a>
           
           <!-- Diaspora Mega Menu Dropdown -->
           <div class="mega-menu shadow-lg">
@@ -253,8 +255,33 @@
       
       <div class="search-box-container d-none d-md-block">
         <div class="search-input-wrapper">
-          <input type="text" placeholder="Search..." aria-label="Search" />
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            aria-label="Search"
+            [value]="searchQuery"
+            (input)="onSearchInput($event)"
+            (keydown)="onKeyDown($event)" />
           <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+        </div>
+        
+        <!-- Search Results Dropdown -->
+        <div class="search-results-dropdown" *ngIf="showSearchResults && filteredResults.length > 0">
+          <div 
+            *ngFor="let result of filteredResults; let i = index"
+            class="search-result-item"
+            [class.active]="i === activeSearchIndex"
+            (click)="selectSearchResult(result)"
+            (mouseenter)="activeSearchIndex = i">
+            <i class="fa" [ngClass]="result.icon"></i>
+            <span>{{ result.title }}</span>
+          </div>
+        </div>
+        
+        <!-- No Results -->
+        <div class="search-no-results" *ngIf="showSearchResults && filteredResults.length === 0">
+          <i class="fa fa-search"></i>
+          <p>No results found for "{{ searchQuery }}"</p>
         </div>
       </div>
     </div>

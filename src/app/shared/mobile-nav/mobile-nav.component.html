@@ -1,0 +1,16 @@
+<nav class="mobile-bottom-nav" role="navigation" aria-label="Mobile navigation">
+  <div class="nav-container">
+    <button 
+      *ngFor="let item of navItems" 
+      class="nav-item"
+      [class.active]="activeTab === item.id"
+      (click)="setActiveTab(item.id)"
+      [attr.aria-label]="item.label"
+      [attr.aria-current]="activeTab === item.id ? 'page' : undefined">
+      <div class="nav-icon">
+        <i class="fa" [ngClass]="item.icon"></i>
+      </div>
+      <span class="nav-label">{{ item.label }}</span>
+    </button>
+  </div>
+</nav>
