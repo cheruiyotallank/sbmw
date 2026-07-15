@@ -1,0 +1,24 @@
+<nav class="breadcrumb-container" *ngIf="showBreadcrumb" aria-label="Breadcrumb">
+  <div class="container-fluid px-4 px-xl-5">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/" class="breadcrumb-link">
+          <i class="fa fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li *ngFor="let crumb of breadcrumbs; let last = last" 
+          class="breadcrumb-item"
+          [class.active]="last">
+        <ng-container [ngSwitch]="last">
+          <a *ngSwitchCase="false" [routerLink]="crumb.url" class="breadcrumb-link">
+            {{ crumb.label }}
+          </a>
+          <span *ngSwitchCase="true" class="breadcrumb-current">
+            {{ crumb.label }}
+          </span>
+        </ng-container>
+      </li>
+    </ol>
+  </div>
+</nav>

@@ -3,12 +3,15 @@ import { DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
+import { MobileNavComponent } from './shared/mobile-nav/mobile-nav.component';
+import { LiveChatComponent } from './shared/live-chat/live-chat.component';
 import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, BreadcrumbComponent, MobileNavComponent, LiveChatComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,0 +1,61 @@
+<!-- Chat Toggle Button -->
+<button 
+  class="chat-toggle-btn"
+  (click)="toggleChat()"
+  *ngIf="!isOpen"
+  aria-label="Open live chat">
+  <i class="fa fa-comments"></i>
+  <span class="chat-badge">1</span>
+</button>
+
+<!-- Chat Window -->
+<div class="chat-window" *ngIf="isOpen" [class.minimized]="isMinimized">
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <div class="chat-header-content">
+      <div class="chat-avatar">
+        <i class="fa fa-headphones"></i>
+      </div>
+      <div class="chat-info">
+        <h3>SBM Support</h3>
+        <p class="chat-status">Online</p>
+      </div>
+    </div>
+    <div class="chat-header-actions">
+      <button class="chat-action-btn" (click)="minimizeChat()" aria-label="Minimize chat">
+        <i class="fa fa-minus"></i>
+      </button>
+      <button class="chat-action-btn" (click)="closeChat()" aria-label="Close chat">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Chat Messages -->
+  <div class="chat-messages" *ngIf="!isMinimized">
+    <div class="message" 
+         *ngFor="let message of messages" 
+         [class.user-message]="message.isUser"
+         [class.bot-message]="!message.isUser">
+      <div class="message-content">
+        <p>{{ message.text }}</p>
+        <span class="message-time">{{ message.timestamp | date:'shortTime' }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Input -->
+  <div class="chat-input" *ngIf="!isMinimized">
+    <div class="input-wrapper">
+      <input 
+        type="text" 
+        [(ngModel)]="newMessage" 
+        (keypress)="onKeyPress($event)"
+        placeholder="Type your message..."
+        aria-label="Type a message">
+      <button class="send-btn" (click)="sendMessage()" aria-label="Send message">
+        <i class="fa fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>

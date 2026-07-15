@@ -1,4 +1,4 @@
-import { Component, OnDestroy, AfterViewInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, ViewChild, ElementRef, NgZone, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
@@ -21,6 +21,14 @@ export class Solutions implements OnDestroy, AfterViewInit {
   @ViewChild('corporateSliderContainer') corporateSliderContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('diasporaSliderContainer') diasporaSliderContainer!: ElementRef<HTMLDivElement>;
   private slideInterval: any;
+
+  // Enhanced touch gesture properties
+  private touchStartX = 0;
+  private touchEndX = 0;
+  private touchStartY = 0;
+  private touchEndY = 0;
+  private isDragging = false;
+  private currentSlider: HTMLElement | null = null;
 
   // Data for the 'Solutions for You' cards
   forYouCards = [
@@ -250,6 +258,94 @@ export class Solutions implements OnDestroy, AfterViewInit {
       this.activeSolutionTab = id; 
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  // Enhanced touch gesture handlers
+  onTouchStart(event: TouchEvent, sliderType: string): void {
+    this.touchStartX = event.changedTouches[0].screenX;
+    this.touchStartY = event.changedTouches[0].screenY;
+    this.isDragging = true;
+    
+    // Set current slider reference
+    switch (sliderType) {
+      case 'for-you':
+        this.currentSlider = this.sliderContainer?.nativeElement || null;
+        break;
+      case 'business':
+        this.currentSlider = this.businessSliderContainer?.nativeElement || null;
+        break;
+      case 'corporate':
+        this.currentSlider = this.corporateSliderContainer?.nativeElement || null;
+        break;
+      case 'diaspora':
+        this.currentSlider = this.diasporaSliderContainer?.nativeElement || null;
+        break;
+    }
+  }
+
+  onTouchMove(event: TouchEvent): void {
+    if (!this.isDragging || !this.currentSlider) return;
+    
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.touchEndY = event.changedTouches[0].screenY;
+    
+    const deltaX = this.touchEndX - this.touchStartX;
+    const deltaY = this.touchEndY - this.touchStartY;
+    
+    // Only handle horizontal swipes
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      event.preventDefault();
+      this.currentSlider.scrollLeft -= deltaX * 0.5;
+    }
+  }
+
+  onTouchEnd(event: TouchEvent, sliderType: string): void {
+    if (!this.isDragging) return;
+    
+    const deltaX = this.touchEndX - this.touchStartX;
+    const deltaY = this.touchEndY - this.touchStartY;
+    const minSwipeDistance = 50;
+    
+    // Only handle horizontal swipes
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) {
+        // Swipe right - previous slide
+        switch (sliderType) {
+          case 'for-you':
+            this.slidePrev();
+            break;
+          case 'business':
+            this.businessSlidePrev();
+            break;
+          case 'corporate':
+            this.corporateSlidePrev();
+            break;
+          case 'diaspora':
+            this.diasporaSlidePrev();
+            break;
+        }
+      } else {
+        // Swipe left - next slide
+        switch (sliderType) {
+          case 'for-you':
+            this.slideNext();
+            break;
+          case 'business':
+            this.businessSlideNext();
+            break;
+          case 'corporate':
+            this.corporateSlideNext();
+            break;
+          case 'diaspora':
+            this.diasporaSlideNext();
+            break;
+        }
+      }
+      this.resetInterval();
+    }
+    
+    this.isDragging = false;
+    this.currentSlider = null;
   }
 
   ngOnDestroy(): void {

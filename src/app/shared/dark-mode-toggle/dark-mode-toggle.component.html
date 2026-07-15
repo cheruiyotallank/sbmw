@@ -1,0 +1,7 @@
+<button 
+  class="dark-mode-toggle-btn"
+  (click)="toggleDarkMode()"
+  [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+  [attr.aria-pressed]="isDarkMode">
+  <i class="fa" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
+</button>
