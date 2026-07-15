@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 182px);
+  height: auto;
   min-height: 400px;
   overflow: hidden;
   background: var(--sbm-navy);
@@ -12,8 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
