@@ -213,6 +213,23 @@
   &:hover .benefit-content h4 {
     color: #d4af37;
   }
+  
+  .benefit-description {
+    font-size: 0.8rem;
+    color: var(--sbm-muted);
+    margin: 0.5rem 0 0 0;
+    line-height: 1.4;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  &:hover .benefit-description {
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 0.75rem;
+  }
 }
 
 /* Custom Gold Elite Button */
@@ -267,4 +284,229 @@
 @keyframes shine-sweep {
   0% { left: -150%; }
   100% { left: 150%; }
+}
+
+/* Elite Gradient Text */
+.elite-gradient-text {
+  background: linear-gradient(135deg, #dfa521, #ffd700, #d4af37, #dfa521);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 3s ease-in-out infinite;
+  position: relative;
+  
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(135deg, #dfa521, #ffd700, #d4af37, #dfa521);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(8px);
+    opacity: 0.3;
+    z-index: -1;
+    animation: gold-shimmer 3s ease-in-out infinite;
+  }
+}
+
+/* ===========================
+   Entrance Animations
+=========================== */
+
+.benefit-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: benefit-entrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.benefit-item:nth-child(1) { animation-delay: 0.1s; }
+.benefit-item:nth-child(2) { animation-delay: 0.2s; }
+.benefit-item:nth-child(3) { animation-delay: 0.3s; }
+.benefit-item:nth-child(4) { animation-delay: 0.4s; }
+.benefit-item:nth-child(5) { animation-delay: 0.5s; }
+.benefit-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes benefit-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   Micro-interactions
+=========================== */
+
+.benefit-item {
+  cursor: pointer;
+  
+  &:active {
+    transform: translateX(4px) translateY(0) scale(0.98);
+  }
+}
+
+.elite-benefits-container {
+  h3 {
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  p {
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Video container micro-interactions */
+.elite-image-card {
+  cursor: pointer;
+  
+  &:active {
+    transform: translateY(-5px) scale(0.99);
+  }
+}
+
+/* ===========================
+   Layout & Spacing Improvements
+=========================== */
+
+#elite-banking {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  }
+}
+
+.elite-benefits-container {
+  padding: 2rem;
+  
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37, #dfa521);
+      border-radius: 2px;
+    }
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+}
+
+.elite-benefits-list {
+  gap: 1.25rem;
+}
+
+.benefit-item {
+  padding: 1.25rem;
+  
+  .icon-box {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 991.98px) {
+  .elite-benefits-container {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    .icon-box {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.4rem;
+    }
+  }
+  
+  .benefit-item {
+    padding: 1rem;
+  }
+  
+  .floating-photo {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .elite-benefits-container {
+    padding: 1.25rem;
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+    
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  .elite-benefits-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .benefit-item {
+    padding: 0.875rem;
+    
+    .icon-box {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .benefit-content h4 {
+      font-size: 0.85rem;
+    }
+  }
+  
+  .floating-photo {
+    max-width: 100%;
+  }
+  
+  .btn-elite-gold {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
 }
