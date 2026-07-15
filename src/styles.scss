@@ -1,6 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
-
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 :root {
   --sbm-navy: #06214d;
   --sbm-blue: #1aa3d8;
@@ -13,6 +13,7 @@
 
 html {
   //font-size: 12px !important; 
+ // font-family: "Outfit", sans-serif;
 
   /* Fluid typography: scales smoothly between mobile and desktop */
   font-size: clamp(12px, 1vw + 7px, 14px); 
@@ -20,7 +21,8 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  font-family: 'Montserrat', system-ui, sans-serif;
+  //font-family: 'Montserrat', system-ui, sans-serif;
+  font-family: "Outfit", sans-serif;
   color: var(--sbm-ink);
   background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
   font-size: 1rem;
