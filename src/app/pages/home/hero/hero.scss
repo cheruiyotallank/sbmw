@@ -1,20 +1,31 @@
+/* ===========================
+   Hero Section
+=========================== */
+
 .hero-section {
   position: relative;
   width: 100%;
-  height: auto;
   min-height: 400px;
   overflow: hidden;
   background: var(--sbm-navy);
 }
 
+/* ===========================
+   Background Image
+=========================== */
+
 .hero-full-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: auto;
+
   opacity: 0;
   transition: opacity 0.8s ease;
+
+  z-index: 0;               /* Keep image behind content */
+  pointer-events: none;     /* Prevent image from blocking text/buttons */
 }
 
 .hero-full-img.slide-active {
@@ -25,75 +36,130 @@
   opacity: 0;
 }
 
-/* Hero Content */
+/* ===========================
+   Hero Content
+=========================== */
+
 .hero-content-row {
+  position: relative;
+  z-index: 2;
   min-height: 400px;
 }
 
 .hero-text-content {
+  position: relative;
+  z-index: 2;
   padding: 2rem 0;
 }
 
 .slide-content-wrapper {
   position: relative;
+  z-index: 2;
+  min-height: 300px;
 }
 
+/* Only one slide visible */
 .slide-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+
   opacity: 0;
+  visibility: hidden;
+
   transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1;
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    visibility 0.6s;
+
+  z-index: 2;
 }
 
 .slide-content.active-content {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }
+
+/* ===========================
+   Text
+=========================== */
 
 .hero-main-title {
   font-size: clamp(1rem, 2.5vw, 1.8rem);
   font-weight: 800;
-  color: white;
+  color: var(--sbm-navy);
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
 }
 
+/* ===========================
+   Button
+=========================== */
+
 .btn-hero-primary {
-  background: linear-gradient(135deg, var(--sbm-blue), var(--sbm-navy));
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
+  position: relative;
+  z-index: 3;
+
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: .5rem;
+
+  padding: 1rem 2rem;
+
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      var(--sbm-navy)
+  );
+
+  transition:
+      transform .3s ease,
+      box-shadow .3s ease;
 }
 
 .btn-hero-primary:hover {
   transform: translateY(-3px);
 }
 
-/* Carousel Dots */
+/* ===========================
+   Carousel Dots
+=========================== */
+
 .carousel-indicators-angled {
   display: flex;
-  gap: 0.75rem;
+  gap: .75rem;
+  position: relative;
+  z-index: 3;
 }
 
 .carousel-dot-angled {
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
+
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #fff;
+
   background: transparent;
+
   cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.6;
+
+  opacity: .6;
+
+  transition: .3s;
 }
 
 .carousel-dot-angled:hover {
@@ -102,34 +168,31 @@
 }
 
 .carousel-dot-angled.active {
-  background: white;
+  background: #fff;
   opacity: 1;
   transform: scale(1.3);
 }
 
-/* Responsive */
-@media (max-width: 991.98px) {
-  .carousel-indicators-angled {
-    left: 20px;
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:991.98px){
+
+  .hero-main-title{
+    font-size:clamp(1.5rem,4vw,2.5rem);
   }
-  
-  .hero-main-title {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-  }
+
 }
 
-@media (max-width: 767.98px) {
-  .hero-section {
-    min-height: 500px;
+@media (max-width:767.98px){
+
+  .hero-section{
+    min-height:500px;
   }
-  
-  .carousel-indicators-angled {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px;
+
+  .hero-text-content{
+    padding:1rem 0;
   }
-  
-  .hero-text-content {
-    padding: 1rem 0;
-  }
+
 }
