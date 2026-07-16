@@ -5,8 +5,9 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 400px;
+  height: 70vh; /* Takes 70% of viewport height, leaving room for forex ticker */
+  max-height: 600px; /* Prevent excessive height on large screens */
+  min-height: 350px; /* Ensure minimum height for content */
   overflow: hidden;
   background: var(--sbm-navy);
 }
@@ -19,8 +20,9 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  height: auto;
-  
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio while filling container */
+  object-position: center; /* Centers the image */
 
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -44,7 +46,7 @@
 .hero-content-row {
   position: relative;
   z-index: 2;
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .hero-text-content {
@@ -180,6 +182,11 @@
 
 @media (max-width:991.98px){
 
+  .hero-section{
+    height: 65vh; /* Slightly smaller for tablets to ensure forex ticker visible */
+    max-height: 500px;
+  }
+
   .hero-main-title{
     font-size:clamp(1.5rem,4vw,2.5rem);
   }
@@ -189,11 +196,23 @@
 @media (max-width:767.98px){
 
   .hero-section{
-    min-height:500px;
+    height: 60vh; /* Smaller for mobile to ensure forex ticker visible */
+    max-height: 450px;
+    min-height: 300px;
   }
 
   .hero-text-content{
     padding:1rem 0;
+  }
+
+}
+
+@media (max-width:575.98px){
+
+  .hero-section{
+    height: 55vh; /* Even smaller for small mobile to ensure forex ticker visible */
+    max-height: 400px;
+    min-height: 250px;
   }
 
 }
