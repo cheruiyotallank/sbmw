@@ -32,42 +32,72 @@
   font-size: 0.95rem;
   line-height: 1.2;
   text-align: left;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
   padding: 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.top-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sbm-blue), var(--sbm-navy));
+  transition: width 0.3s ease;
 }
 
 .top-links a:hover {
   color: var(--sbm-blue);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px rgba(26, 163, 216, 0.3);
+}
+
+.top-links a:hover::after {
+  width: 100%;
 }
 
 .btn-internet-banking {
-  background-color: var(--sbm-navy);
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      var(--sbm-navy)
+  );
   color: #ffffff !important;
   font-weight: 600;
   font-size: 0.95rem;
-  border-radius: 999px;
-  padding: 0.65rem 2rem;
+  border-radius: 50px;
+  padding: 1rem 2rem;
   border: none;
-  box-shadow: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition:
+      transform .3s ease,
+      box-shadow .3s ease;
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
 }
 
 .btn-internet-banking i {
   font-size: 0.9em;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .btn-internet-banking:hover {
-  background-color: var(--sbm-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(26, 163, 216, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(11, 52, 113, 0.3);
 }
 
 .btn-internet-banking:hover i {
-  transform: translateY(-1px) scale(1.1);
   color: #ffffff;
+}
+
+.btn-internet-banking:active {
+  transform: translateY(-1px);
 }
 
 /* Bottom Row Styling */
@@ -100,14 +130,9 @@
   padding: 0.7rem 0;
   position: relative;
   text-shadow: 0 1px 3px rgba(0,0,0,0.25);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
   display: inline-block;
-}
-
-.bottom-links a:hover {
-  color: #f0f8ff;
-  opacity: 1;
-  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .bottom-links a::after {
@@ -115,19 +140,24 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.25s ease;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+  transition: width 0.3s ease;
 }
 
-.bottom-links a:hover::after,
-.bottom-links a.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.bottom-links a:hover {
+  color: #f0f8ff;
+  opacity: 1;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 12px rgba(255,255,255,0.4);
 }
+
+.bottom-links a:hover::after {
+  width: 100%;
+}
+
+/* Mega Menu Styling */
 
 /* Search Bar Styling */
 .search-input-wrapper {
