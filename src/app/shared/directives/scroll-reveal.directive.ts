@@ -18,7 +18,7 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
         }
       });
     }, { 
-      rootMargin: '0px 0px 50px 0px', // Trigger slightly before it enters the viewport
+      rootMargin: '0px 0px 150px 0px', // Trigger much earlier before entering viewport
       threshold: 0.0 
     });
 
