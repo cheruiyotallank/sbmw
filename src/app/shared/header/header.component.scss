@@ -102,7 +102,24 @@
 
 /* Bottom Row Styling */
 .bottom-row {
-  background: #00abdf; /* Solid crisp maximum cyan */
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      var(--sbm-navy)
+  );
+  position: relative;
+  box-shadow: 0 4px 15px rgba(11, 52, 113, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bottom-row:hover {
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      #082b5c
+  );
+  box-shadow: 0 8px 25px rgba(11, 52, 113, 0.4);
+  transform: translateY(-3px);
 }
 
 .bottom-links {
