@@ -104,7 +104,11 @@
 }
 
 .text-sbm-accent {
-  background: linear-gradient(135deg, var(--sbm-blue), #50d5ff);
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      var(--sbm-navy)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -416,7 +420,11 @@
 }
 
 .main-solutions-title .gradient-text {
-  background: linear-gradient(135deg, var(--sbm-blue), #50d5ff, #7dd3fc);
+  background: linear-gradient(
+      135deg,
+      var(--sbm-blue),
+      var(--sbm-navy)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
