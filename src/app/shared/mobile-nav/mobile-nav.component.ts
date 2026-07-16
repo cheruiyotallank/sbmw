@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mobile-nav',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './mobile-nav.component.html',
   styleUrl: './mobile-nav.component.scss'
 })
