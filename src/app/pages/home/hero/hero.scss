@@ -10,11 +10,14 @@
 
   position: relative;
 
-  width: 100%;
+  width: 100vw; /* Full viewport width */
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 
-  height: auto;
-
-  min-height: 400px;
+  height: 70vh; /* Fits between header and forex ticker */
+  max-height: 600px; /* Prevent excessive height */
+  min-height: 350px; /* Ensure minimum height */
 
   overflow: hidden;
 
@@ -41,6 +44,8 @@
   width: 100%;
 
   height: auto;
+  object-fit: cover; /* Fills entire container, no blue side bars */
+  object-position: center; /* Centers the image */
 
   
 
@@ -356,6 +361,10 @@
 
 
   .hero-section{
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     height: 65vh; /* Slightly smaller for tablets to ensure forex ticker visible */
     max-height: 500px;
   }
@@ -378,8 +387,13 @@
 
 
   .hero-section{
-
-    min-height:500px;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 60vh; /* Smaller for mobile to ensure forex ticker visible */
+    max-height: 450px;
+    min-height: 300px;
 
   }
 
