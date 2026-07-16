@@ -298,19 +298,17 @@
 
 .carousel-dot-angled {
 
-  width: 1px;
+  width: 2px;
 
-  height: 1px;
+  height: 2px;
 
 
 
   border-radius: 50%;
 
-  border: 1px solid #fff;
+  border: none;
 
-
-
-  background: transparent;
+  background: rgba(255, 255, 255, 0.5);
 
 
 
@@ -332,8 +330,6 @@
 
   opacity: 1;
 
-  transform: scale(1.5);
-
 }
 
 
@@ -343,8 +339,6 @@
   background: #fff;
 
   opacity: 1;
-
-  transform: scale(1.8);
 
 }
 
