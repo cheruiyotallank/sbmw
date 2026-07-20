@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Horizontal Banking Categories Styles
+   ========================================================================== */
+
+.banking-categories-section {
+  background-color: #f8fafc;
+  position: relative;
+  z-index: 2; /* Sit above the hero */
+  margin-top: -30px; /* Pull it up slightly into the hero area for depth */
+}
+
+/* Typography */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--sbm-navy);
+}
+.section-title span {
+  color: var(--sbm-blue);
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Custom Scroll Controls */
+.btn-scroll {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(11, 52, 113, 0.1);
+  background: white;
+  color: var(--sbm-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn-scroll:hover {
+  background: var(--sbm-blue);
+  color: white;
+  border-color: var(--sbm-blue);
+  box-shadow: 0 4px 10px rgba(26, 163, 216, 0.2);
+}
+
+/* Horizontal Scroll Container */
+.categories-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  padding: 10px 0 20px 0;
+}
+.categories-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.categories-wrapper {
+  padding-left: 5px; /* Account for box shadow on first item */
+}
+
+/* Category Card Base */
+.category-card {
+  position: relative;
+  width: 320px;
+  border-radius: 20px;
+  padding: 2px; /* Space for the gradient border glow */
+  background: transparent;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Glassmorphism Inner Panel */
+.card-glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(11, 52, 113, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Glow Effect */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.category-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* Icons */
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Unified SBM Theme Icons & Glows */
+.icon-wrapper {
+  background: rgba(11, 52, 113, 0.05); 
+  color: var(--sbm-navy);
+}
+
+/* SBM Blue Gradient Glow */
+.card-glow {
+  background: linear-gradient(135deg, var(--sbm-blue), transparent);
+}
+
+.category-card:hover .icon-wrapper {
+  transform: scale(1.1);
+  background: rgba(26, 163, 216, 0.1); 
+  color: var(--sbm-blue);
+}
+
+/* Text */
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sbm-navy);
+}
+
+.explore-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sbm-navy);
+  transition: all 0.3s ease;
+}
+.category-card:hover .explore-link {
+  color: var(--sbm-blue);
+}
+.explore-link i {
+  transition: transform 0.3s ease;
+}
+.category-card:hover .explore-link i {
+  transform: translateX(5px);
+}

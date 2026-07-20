@@ -1,424 +1,266 @@
-/* ===========================
+/* ==========================================================================
+   Modern Split Hero Component Styles
+   ========================================================================== */
 
-   Hero Section
-
-=========================== */
-
-
-
-.hero-section {
-
+.split-hero-section {
   position: relative;
-
-  width: 100vw; /* Full viewport width */
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-
-  height: 70vh; /* Fits between header and forex ticker */
-  max-height: 600px; /* Prevent excessive height */
-  min-height: 350px; /* Ensure minimum height */
-
+  background-color: #f8fafc;
   overflow: hidden;
-
-  background: var(--sbm-navy);
-
-}
-
-
-
-/* ===========================
-
-   Background Image
-
-=========================== */
-
-
-
-.hero-full-img {
-
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-
-  height: auto;
-  object-fit: cover; /* Fills entire container, no blue side bars */
-  object-position: center; /* Centers the image */
-
-  
-
-
-
-  opacity: 0;
-
-  transition: opacity 0.8s ease;
-
-
-
-  z-index: 0;               /* Keep image behind content */
-
-  pointer-events: none;     /* Prevent image from blocking text/buttons */
-
-}
-
-
-
-.hero-full-img.slide-active {
-
-  opacity: 1;
-
-}
-
-
-
-.hero-full-img.slide-previous {
-
-  opacity: 0;
-
-}
-
-
-
-/* ===========================
-
-   Hero Content
-
-=========================== */
-
-
-
-.hero-content-row {
-
-  position: relative;
-
-  z-index: 2;
-
-  min-height: 400px;
-
-}
-
-
-
-.hero-text-content {
-
-  position: relative;
-
-  z-index: 2;
-
-  padding: 2rem 0;
-
-}
-
-
-
-.slide-content-wrapper {
-
-  position: relative;
-
-  z-index: 2;
-
-  min-height: 300px;
-
-}
-
-
-
-/* Only one slide visible */
-
-.slide-content {
-
-  position: absolute;
-
-  inset: 0;
-
-
-
-  opacity: 0;
-
-  visibility: hidden;
-
-
-
-  transform: translateY(20px);
-
-
-
-  transition:
-
-    opacity 0.6s ease,
-
-    transform 0.6s ease,
-
-    visibility 0.6s;
-
-
-
-  z-index: 2;
-
-}
-
-
-
-.slide-content.active-content {
-
-  opacity: 1;
-
-  visibility: visible;
-
-  transform: translateY(0);
-
-}
-
-
-
-/* ===========================
-
-   Text
-
-=========================== */
-
-
-
-.hero-main-title {
-
-  font-size: clamp(0.5rem, 2.0vw, 1.4rem);
-
-  font-weight: 400;
-
-  color: var(--sbm-blue);
-
-  line-height: 1.2;
-
-  margin-bottom: 1.5rem;
-
-  position: relative;
-
-  z-index: 10;
-
-  background: none;
-
-  -webkit-text-fill-color: initial;
-
-  -webkit-background-clip: border-box;
-
-  background-clip: border-box;
-
-}
-
-
-
-/* ===========================
-
-   Button
-
-=========================== */
-
-
-
-.btn-hero-primary {
-
-  position: relative;
-
-  z-index: 3;
-
-
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: .5rem;
-
-
-
-  padding: 1rem 2rem;
-
-
-
-  color: #fff;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-
-
-  border-radius: 50px;
-
-
-
-  background: linear-gradient(
-
-      135deg,
-
-      var(--sbm-blue),
-
-      var(--sbm-navy)
-
-  );
-
-
-
-  transition:
-
-      transform .3s ease,
-
-      box-shadow .3s ease;
-
-}
-
-
-
-.btn-hero-primary:hover {
-
-  transform: translateY(-3px);
-
-}
-
-
-
-/* ===========================
-
-   Carousel Dots
-
-=========================== */
-
-
-
-.carousel-indicators-angled {
-
+  min-height: 85vh;
   display: flex;
-
-  gap: .75rem;
-
-  position: relative;
-
-  z-index: 3;
-
+  align-items: center;
 }
 
+/* Abstract Gradient Background (replaces full-width image) */
+.hero-gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(230, 244, 255, 0.7) 0%, rgba(248, 250, 252, 1) 100%);
+  z-index: 1;
+}
 
-
-.carousel-dot-angled {
-
-  width: 6px;
-
-  height: 6px;
-
+.hero-gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(26, 163, 216, 0.08) 0%, rgba(255,255,255,0) 70%);
   border-radius: 50%;
+  z-index: 1;
+}
 
-  border: 1px solid rgba(255, 255, 255, 0.8);
+/* ==========================================
+   Left Side: Typography & Content
+   ========================================== */
+.hero-content-left {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
-  background: rgba(255, 255, 255, 0.6);
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(11, 52, 113, 0.05);
+  border: 1px solid rgba(11, 52, 113, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sbm-navy);
+}
 
-  cursor: pointer;
+.pulse-animation {
+  width: 8px;
+  height: 8px;
+  background-color: var(--sbm-blue);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(26, 163, 216, 0.7);
+  animation: pulse-dot 2s infinite;
+}
 
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(26, 163, 216, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(26, 163, 216, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(26, 163, 216, 0); }
+}
+
+.hero-title-massive {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--sbm-navy);
+  letter-spacing: -0.02em;
+}
+
+.text-sbm-accent {
+  background: linear-gradient(135deg, var(--sbm-blue), #00abdf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+/* Text Slides Crossfade */
+.slide-text-wrapper {
+  overflow: visible;
+}
+.slide-text-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.slide-text-content.active-text {
   opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
 
-  transition: .3s;
+/* Call to Action */
+.btn-action-primary {
+  background: linear-gradient(135deg, var(--sbm-blue), var(--sbm-navy));
+  color: #fff !important;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(11, 52, 113, 0.2);
+  display: inline-flex;
+  align-items: center;
+}
+.btn-action-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(11, 52, 113, 0.3);
+}
 
+/* Carousel Dots */
+.carousel-indicators-modern {
+  z-index: 10;
+}
+.carousel-dot-modern {
+  width: 12px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: rgba(11, 52, 113, 0.2);
+  border: none;
+  transition: all 0.3s ease;
   padding: 0;
-
-  margin: 0;
-
-  min-width: 6px;
-
-  min-height: 6px;
-
-  box-sizing: border-box;
-
+  cursor: pointer;
+}
+.carousel-dot-modern.active {
+  width: 32px;
+  background-color: var(--sbm-blue);
 }
 
+/* ==========================================
+   Right Side: Floating Visuals
+   ========================================== */
+.hero-visual-right {
+  perspective: 1000px;
+}
 
+.glassmorphism-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+}
 
-.carousel-dot-angled:hover {
+.shadow-premium {
+  box-shadow: 0 30px 60px rgba(11, 52, 113, 0.12), 0 10px 20px rgba(11, 52, 113, 0.08);
+}
 
+/* Main Image Slides */
+.hero-floating-image-container {
+  width: 100%;
+  max-width: 550px;
+  aspect-ratio: 4/3;
+  position: relative;
+  animation: dynamic-float 6s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes dynamic-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-floating-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  box-shadow: 0 30px 60px rgba(11, 52, 113, 0.25);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 4px solid rgba(255, 255, 255, 0.6);
+}
+.hero-floating-img.active-image {
   opacity: 1;
-
 }
 
-
-
-.carousel-dot-angled.active {
-
-  background: #fff;
-
-  border: 1px solid #fff;
-
-  opacity: 1;
-
+/* Floating UI Cards */
+.floating-ui-card {
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  animation: float 6s ease-in-out infinite;
+}
+.ui-card-top-right {
+  top: -20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+.ui-card-bottom-left {
+  bottom: -30px;
+  left: -30px;
+  animation-delay: 2s;
 }
 
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.bg-sbm-accent { background-color: #00abdf; }
+.bg-sbm-blue { background-color: var(--sbm-blue); }
+.text-sbm-navy { color: var(--sbm-navy); }
 
-
-/* ===========================
-
-   Responsive
-
-=========================== */
-
-
-
-@media (max-width:991.98px){
-
-
-  .hero-section{
-    width: 100vw;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 65vh; /* Slightly smaller for tablets to ensure forex ticker visible */
-    max-height: 500px;
-  }
-
-
-  .hero-main-title{
-
-    font-size:clamp(1.5rem,4vw,2.5rem);
-
-  }
-
-
-
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-
-
-@media (max-width:767.98px){
-
-
-
-  .hero-section{
-    width: 100vw;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 60vh; /* Smaller for mobile to ensure forex ticker visible */
-    max-height: 450px;
-    min-height: 300px;
-
-  }
-
-
-
-  .hero-text-content{
-
-    padding:1rem 0;
-
-  }
-
-
-
+/* Decorative Glows */
+.decorative-glow {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 1;
+  opacity: 0.5;
+}
+.glow-1 {
+  background: var(--sbm-blue);
+  top: -10%;
+  right: -10%;
+}
+.glow-2 {
+  background: #00abdf;
+  bottom: -10%;
+  left: -10%;
 }
 
-@media (max-width:575.98px){
-
-  .hero-section{
-    height: 55vh; /* Even smaller for small mobile to ensure forex ticker visible */
-    max-height: 400px;
-    min-height: 250px;
-  }
-
+@media (max-width: 991.98px) {
+  .hero-title-massive { font-size: 2.5rem; }
+  .main-image-card { transform: none; }
+  .ui-card-top-right { right: 10px; top: -10px; }
+  .ui-card-bottom-left { left: 10px; bottom: -10px; }
 }

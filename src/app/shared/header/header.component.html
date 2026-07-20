@@ -1,329 +1,372 @@
-<header class="topbar">
-  <!-- Top Row (White Background) -->
-  <div class="top-row container-fluid px-4 px-xl-5 py-2 d-flex align-items-center justify-content-between">
-    <a class="brand d-flex align-items-center gap-2" routerLink="/">
-      <div class="brand-logo-container d-flex align-items-center gap-1">
-        <div class="brand-mark">
-          <app-logo [width]="36" [height]="36"></app-logo>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name-bold">SBM</span> <span class="brand-name-light"> bank</span>
-        </div>
-      </div>
-    </a>
-
-    <div class="d-none d-lg-flex align-items-center gap-4 gap-xl-5">
-      <nav class="top-links d-flex align-items-center gap-4 gap-xl-5">
-        <a routerLink="/about-us">About <br class="d-xl-none"> Us</a>
-        <a routerLink="/investor-relations">Investor <br class="d-xl-none"> Relations</a>
-        <a routerLink="/sustainability">Sustainability</a>
-        <a routerLink="/careers">Careers</a>
-        <a routerLink="/support">Support</a>
-        <a routerLink="/newsroom">Newsroom</a>
-      </nav>
-      <a routerLink="/internet-banking" class="btn btn-internet-banking d-flex align-items-center gap-2">
-        <i class="fa fa-lock"></i> Internet Banking
-      </a>
-    </div>
-    
-    <!-- Hamburger / Close Button for Mobile -->
-    <button class="mobile-toggle d-block d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu" style="background: transparent; border: none; padding: 0;">
-      <i class="fa" [ngClass]="isMobileMenuOpen ? 'fa-times' : 'fa-bars'" style="font-size: 1.5rem; color: var(--sbm-navy); transition: all 0.3s ease;"></i>
-    </button>
-  </div>
-
-  <!-- Bottom Row (Cyan Background) - Desktop Only -->
-  <div class="bottom-row d-none d-lg-block">
-    <div class="container-fluid px-4 px-xl-5 d-flex align-items-center justify-content-between py-2">
-      <nav class="bottom-links d-flex align-items-center flex-grow-1 justify-content-between pe-4 pe-lg-5">
-        <div class="nav-item-dropdown">
-          <a routerLink="/for-you" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 0)" tabindex="0">For <br class="d-xl-none"> You</a>
-          
-          <!-- Mega Menu Dropdown -->
-          <div class="mega-menu shadow-lg">
-            <div class="row w-100 m-0">
-              <!-- Open an Account -->
-              <div class="col-lg-3 mega-menu-column border-blue">
-                <div class="mega-menu-header text-navy">
-                  <i class="fa fa-id-card"></i> Open an Account
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Jivunie Current Account</a>
-                  <a href="#" class="mega-menu-link">Aspire Current Account</a>
-                  <a href="#" class="mega-menu-link">Aspire Plus Current Account</a>
-                  <a href="#" class="mega-menu-link">Elite Current Account</a>
-                  <a href="#" class="mega-menu-link">Platinum Saver Account</a>
-                  <a href="#" class="mega-menu-link">Pebble Savings Account</a>
-                  <a href="#" class="mega-menu-link">Instant Saver Account</a>
-                </div>
-              </div>
-              
-              <!-- Transact -->
-              <div class="col-lg-3 mega-menu-column border-orange">
-                <div class="mega-menu-header text-orange">
-                  <i class="fa fa-credit-card"></i> Transact
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">SBM Cards</a>
-                  <a href="#" class="mega-menu-link">Mfukoni Mobile</a>
-                  <a href="#" class="mega-menu-link">Mfukoni Online</a>
-                  <a href="#" class="mega-menu-link">Pesalink</a>
-                </div>
-              </div>
-              
-              <!-- Get a Loan -->
-              <div class="col-lg-3 mega-menu-column border-green">
-                <div class="mega-menu-header text-green">
-                  <i class="fa fa-money"></i> Get a Loan
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Loan Calculator</a>
-                  <a href="#" class="mega-menu-link">Auto Loan</a>
-                  <a href="#" class="mega-menu-link">Mortgage</a>
-                  <a href="#" class="mega-menu-link">SBM Overdraft</a>
-                  <a href="#" class="mega-menu-link">Personal Unsecured Loan</a>
-                  <a href="#" class="mega-menu-link">Salary Advance</a>
-                </div>
-              </div>
-              
-              <!-- Investment -->
-              <div class="col-lg-3 mega-menu-column border-pink">
-                <div class="mega-menu-header text-pink">
-                  <i class="fa fa-line-chart"></i> Investment
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Term and Call Deposits</a>
-                  <a href="#" class="mega-menu-link">Legacy Plus</a>
-                  <a href="#" class="mega-menu-link">Upfront Interest Fixed Deposit</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="nav-item-dropdown">
-          <a routerLink="/for-business" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 1)" tabindex="0">For Your <br class="d-xl-none"> Business</a>
-          
-          <!-- For Your Business Mega Menu Dropdown -->
-          <div class="mega-menu shadow-lg">
-            <div class="row w-100 m-0">
-              <!-- Open an Account -->
-              <div class="col-lg-4 mega-menu-column border-blue">
-                <div class="mega-menu-header text-navy">
-                  <i class="fa fa-id-card"></i> Open an Account
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Baraka Collection Account</a>
-                  <a href="#" class="mega-menu-link">Plus Current Account</a>
-                  <a href="#" class="mega-menu-link">Business Plus Current Account</a>
-                  <a href="#" class="mega-menu-link">Genesis Current Account</a>
-                  <a href="#" class="mega-menu-link">Jijenge Biashara Account</a>
-                  <a href="#" class="mega-menu-link">Jijenge Biashara Savings Account</a>
-                </div>
-              </div>
-              
-              <!-- SME Solutions -->
-              <div class="col-lg-4 mega-menu-column border-orange">
-                <div class="mega-menu-header text-orange">
-                  <i class="fa fa-credit-card"></i> SME Solutions
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Mobile 2 Bank</a>
-                  <a href="#" class="mega-menu-link">Merchant Short Code</a>
-                  <a href="#" class="mega-menu-link">Simple Payments Solution</a>
-                  <a href="#" class="mega-menu-link">Workplace Banking</a>
-                  <a href="#" class="mega-menu-link">Mfukoni Online</a>
-                  <a href="#" class="mega-menu-link">Asset Finance</a>
-                  <a href="#" class="mega-menu-link">iTax Payment Solution</a>
-                  <a href="#" class="mega-menu-link">Pesalink</a>
-                  <a href="#" class="mega-menu-link">Trade Finance</a>
-                </div>
-              </div>
-              
-              <!-- Get a Loan -->
-              <div class="col-lg-4 mega-menu-column border-green">
-                <div class="mega-menu-header text-green">
-                  <i class="fa fa-money"></i> Get a Loan
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Unsecured MSME Loan</a>
-                  <a href="#" class="mega-menu-link">Term Loans</a>
-                  <a href="#" class="mega-menu-link">Structured Term loans</a>
-                  <a href="#" class="mega-menu-link">SBM Overdraft</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-item-dropdown">
-          <a routerLink="/for-corporate" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 2)" tabindex="0">For <br class="d-xl-none"> Corporate</a>
-          
-          <!-- For Corporate Mega Menu Dropdown -->
-          <div class="mega-menu shadow-lg">
-            <div class="row w-100 m-0">
-              <!-- Open an Account -->
-              <div class="col-lg-4 mega-menu-column border-blue">
-                <div class="mega-menu-header text-navy">
-                  <i class="fa fa-id-card"></i> Open an Account
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Plus Current Account</a>
-                  <a href="#" class="mega-menu-link">Business Plus Current Account</a>
-                  <a href="#" class="mega-menu-link">Term and Call Deposits</a>
-                </div>
-              </div>
-              
-              <!-- Corporate Solutions -->
-              <div class="col-lg-4 mega-menu-column border-orange">
-                <div class="mega-menu-header text-orange">
-                  <i class="fa fa-credit-card"></i> Corporate Solutions
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">iTax Payment Solution</a>
-                  <a href="#" class="mega-menu-link">Pesalink</a>
-                  <a href="#" class="mega-menu-link">Trade Finance</a>
-                </div>
-              </div>
-              
-              <!-- Financing -->
-              <div class="col-lg-4 mega-menu-column border-green">
-                <div class="mega-menu-header text-green">
-                  <i class="fa fa-money"></i> Financing
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">SBM Overdraft</a>
-                  <a href="#" class="mega-menu-link">Asset Finance</a>
-                  <a href="#" class="mega-menu-link">Insurance Premium Financing</a>
-                  <a href="#" class="mega-menu-link">Term Loans</a>
-                  <a href="#" class="mega-menu-link">Structured Term Loans</a>
-                  <a href="#" class="mega-menu-link">Crop Loan</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-item-dropdown">
-          <a routerLink="/diaspora" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 3)" tabindex="0">Diaspora</a>
-          
-          <!-- Diaspora Mega Menu Dropdown -->
-          <div class="mega-menu shadow-lg">
-            <div class="row w-100 m-0">
-              <!-- Open an Account -->
-              <div class="col-lg-4 mega-menu-column border-blue">
-                <div class="mega-menu-header text-navy">
-                  <i class="fa fa-id-card"></i> Open an Account
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">SBM Platinum Saver Account</a>
-                </div>
-              </div>
-              
-              <!-- Invest -->
-              <div class="col-lg-4 mega-menu-column border-orange">
-                <div class="mega-menu-header text-orange">
-                  <i class="fa fa-credit-card"></i> Invest
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">Construction Loans</a>
-                  <a href="#" class="mega-menu-link">Mortgages</a>
-                  <a href="#" class="mega-menu-link">Shamba Loans</a>
-                  <a href="#" class="mega-menu-link">Personal Secured Loan</a>
-                </div>
-              </div>
-              
-              <!-- Transact -->
-              <div class="col-lg-4 mega-menu-column border-green">
-                <div class="mega-menu-header text-green">
-                  <i class="fa-solid fa-hand-holding-dollar"></i> Transact
-                </div>
-                <div class="mega-menu-list">
-                  <a href="#" class="mega-menu-link">SBM Mfukoni Mobile Banking</a>
-                  <a href="#" class="mega-menu-link">SBM Mfukoni Online Banking</a>
-                  <a href="#" class="mega-menu-link">Telegraphic Transfers (TT)</a>
-                  <a href="#" class="mega-menu-link">Real Time Gross Settlement (RTGS)</a>
-                  <a href="#" class="mega-menu-link">Money Transfer Services</a>
-                  <a href="#" class="mega-menu-link">Cards</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a routerLink="/support" routerLinkActive="active">Ways of <br class="d-xl-none"> Banking</a>
-        <a routerLink="/treasury" routerLinkActive="active">Treasury</a>
-        <a routerLink="/bancassurance" routerLinkActive="active">Bancassurance</a>
-      </nav>
+<header class="topbar modern-unified-header">
+  <div class="container-fluid px-4 px-xl-5">
+    <div class="header-inner d-flex align-items-center justify-content-between py-2 py-lg-3">
       
-      <div class="search-box-container d-none d-md-block">
-        <div class="search-input-wrapper">
-          <input 
-            type="text" 
-            placeholder="Search..." 
-            aria-label="Search"
-            [value]="searchQuery"
-            (input)="onSearchInput($event)"
-            (keydown)="onKeyDown($event)" />
-          <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-        </div>
-        
-        <!-- Search Results Dropdown -->
-        <div class="search-results-dropdown" *ngIf="showSearchResults && filteredResults.length > 0">
-          <div 
-            *ngFor="let result of filteredResults; let i = index"
-            class="search-result-item"
-            [class.active]="i === activeSearchIndex"
-            (click)="selectSearchResult(result)"
-            (mouseenter)="activeSearchIndex = i">
-            <i class="fa" [ngClass]="result.icon"></i>
-            <span>{{ result.title }}</span>
+      <!-- ========================================== -->
+      <!-- LEFT: Logo -->
+      <!-- ========================================== -->
+      <a class="brand d-flex align-items-center gap-2" routerLink="/">
+        <div class="brand-logo-container d-flex align-items-center gap-1">
+          <div class="brand-mark">
+            <app-logo [width]="36" [height]="36"></app-logo>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name-bold">SBM</span> <span class="brand-name-light"> bank</span>
           </div>
         </div>
+      </a>
+
+      <!-- ========================================== -->
+      <!-- CENTER: Main Navigation -->
+      <!-- ========================================== -->
+      <nav class="main-nav d-none d-lg-flex align-items-center justify-content-center flex-grow-1 gap-4 gap-xl-5">
         
-        <!-- No Results -->
-        <div class="search-no-results" *ngIf="showSearchResults && filteredResults.length === 0">
-          <i class="fa fa-search"></i>
-          <p>No results found for "{{ searchQuery }}"</p>
+        <!-- About -->
+        <div class="nav-item-dropdown">
+          <a routerLink="/about-us" class="nav-main-link" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 0)" tabindex="0">About</a>
+          <div class="mega-menu shadow-premium">
+            <div class="row w-100 m-0">
+              <div class="col-4 mega-menu-column border-blue">
+                <div class="mega-menu-header text-navy"><i class="fa fa-building"></i> Company Info</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Our Story</a>
+                  <a href="#" class="mega-menu-link">Leadership Team</a>
+                  <a href="#" class="mega-menu-link">Newsroom</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-orange">
+                <div class="mega-menu-header text-orange"><i class="fa fa-line-chart"></i> Investor Relations</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Financial Reports</a>
+                  <a href="#" class="mega-menu-link">Stock Info</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-green">
+                <div class="mega-menu-header text-green"><i class="fa fa-leaf"></i> Sustainability</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">ESG Reports</a>
+                  <a href="#" class="mega-menu-link">Community Impact</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Digital -->
+        <div class="nav-item-dropdown">
+          <a routerLink="/internet-banking" class="nav-main-link" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 1)" tabindex="0">Digital</a>
+          <div class="mega-menu shadow-premium">
+            <div class="row w-100 m-0">
+              <div class="col-4 mega-menu-column border-blue">
+                <div class="mega-menu-header text-navy"><i class="fa fa-mobile"></i> Mobile App</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Mfukoni Mobile</a>
+                  <a href="#" class="mega-menu-link">App Features</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-orange">
+                <div class="mega-menu-header text-orange"><i class="fa fa-laptop"></i> Internet Banking</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Mfukoni Online</a>
+                  <a href="#" class="mega-menu-link">Corporate Portal</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-green">
+                <div class="mega-menu-header text-green"><i class="fa fa-cogs"></i> Digital Tools</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Pesalink</a>
+                  <a href="#" class="mega-menu-link">Calculators</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banking -->
+        <div class="nav-item-dropdown">
+          <a routerLink="/for-you" class="nav-main-link" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 2)" tabindex="0">Banking</a>
+          <div class="mega-menu shadow-premium">
+            <div class="row w-100 m-0">
+              <div class="col-4 mega-menu-column border-blue">
+                <div class="mega-menu-header text-navy"><i class="fa fa-user"></i> Personal</div>
+                <div class="mega-menu-list">
+                  <a routerLink="/for-you" class="mega-menu-link">Current Accounts</a>
+                  <a routerLink="/for-you" class="mega-menu-link">Savings Accounts</a>
+                  <a routerLink="/for-you" class="mega-menu-link">Loans & Mortgages</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-orange">
+                <div class="mega-menu-header text-orange"><i class="fa fa-briefcase"></i> Business</div>
+                <div class="mega-menu-list">
+                  <a routerLink="/for-business" class="mega-menu-link">SME Accounts</a>
+                  <a routerLink="/for-business" class="mega-menu-link">Asset Finance</a>
+                  <a routerLink="/for-business" class="mega-menu-link">Trade Finance</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-green">
+                <div class="mega-menu-header text-green"><i class="fa fa-building"></i> Corporate</div>
+                <div class="mega-menu-list">
+                  <a routerLink="/for-corporate" class="mega-menu-link">Corporate Accounts</a>
+                  <a routerLink="/for-corporate" class="mega-menu-link">Treasury Services</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-item-dropdown">
+          <a routerLink="/support" class="nav-main-link" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 3)" tabindex="0">Support</a>
+          <div class="mega-menu shadow-premium" style="width: 600px; left: 50%; transform: translateX(-50%) translateY(15px);">
+            <div class="row w-100 m-0">
+              <div class="col-4 mega-menu-column border-blue">
+                <div class="mega-menu-header text-navy"><i class="fa fa-question-circle"></i> Help Center</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">FAQs</a>
+                  <a href="#" class="mega-menu-link">Security Center</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-orange">
+                <div class="mega-menu-header text-orange"><i class="fa fa-phone"></i> Contact Us</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Customer Care</a>
+                  <a href="#" class="mega-menu-link">Feedback</a>
+                </div>
+              </div>
+              <div class="col-4 mega-menu-column border-green">
+                <div class="mega-menu-header text-green"><i class="fa fa-map-marker"></i> Find Us</div>
+                <div class="mega-menu-list">
+                  <a href="#" class="mega-menu-link">Branch Locator</a>
+                  <a href="#" class="mega-menu-link">ATM Network</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Careers -->
+        <a routerLink="/careers" class="nav-main-link" routerLinkActive="active">Careers</a>
+      </nav>
+
+      <!-- ========================================== -->
+      <!-- RIGHT: Quick Actions & Search -->
+      <!-- ========================================== -->
+      <div class="quick-actions d-none d-lg-flex align-items-center gap-3">
+        
+        <!-- Search Widget -->
+        <div class="search-box-container position-relative me-2">
+          <div class="search-input-wrapper-unified">
+            <input 
+              type="text" 
+              placeholder="Search..." 
+              aria-label="Search"
+              [value]="searchQuery"
+              (input)="onSearchInput($event)"
+              (keydown)="onKeyDown($event)" />
+            <button type="submit" class="search-btn-unified"><i class="fa fa-search"></i></button>
+          </div>
+          
+          <!-- Search Results Dropdown -->
+          <div class="search-results-dropdown shadow-premium" *ngIf="showSearchResults && filteredResults.length > 0">
+            <div 
+              *ngFor="let result of filteredResults; let i = index"
+              class="search-result-item"
+              [class.active]="i === activeSearchIndex"
+              (click)="selectSearchResult(result)"
+              (mouseenter)="activeSearchIndex = i">
+              <i class="fa" [ngClass]="result.icon"></i>
+              <span>{{ result.title }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <a routerLink="/for-you" class="btn btn-outline-sbm rounded-pill">Open Account</a>
+        <a routerLink="/internet-banking" class="btn btn-internet-banking-unified rounded-pill d-flex align-items-center gap-2">
+          <i class="fa fa-lock"></i> Internet Banking
+        </a>
       </div>
+
+      <!-- ========================================== -->
+      <!-- MOBILE: Toggle -->
+      <!-- ========================================== -->
+      <button class="mobile-toggle d-block d-lg-none" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu" style="background: transparent; border: none; padding: 0;">
+        <i class="fa" [ngClass]="isMobileMenuOpen ? 'fa-times' : 'fa-bars'" style="font-size: 1.5rem; color: var(--sbm-navy); transition: all 0.3s ease;"></i>
+      </button>
+
     </div>
   </div>
 
-  <!-- Mobile Menu Dropdown Panel -->
+  <!-- Mobile Menu (Simplified for unified layout) -->
   <div class="mobile-menu-overlay" *ngIf="isMobileMenuOpen">
-    <!-- Middle Cyan Area -->
-    <div class="mobile-menu-cyan px-4 py-4">
+    <div class="mobile-menu-inner p-4">
       <div class="search-input-wrapper-mobile mb-4">
-        <input type="text" placeholder="Search" aria-label="Search">
+        <input type="text" placeholder="Search SBM Bank..." aria-label="Search">
         <button type="button" class="search-btn-mobile"><i class="fa fa-search"></i></button>
       </div>
       
-      <div class="mobile-links-cyan d-flex flex-column">
-        <a routerLink="/for-you" (click)="toggleMobileMenu()">For You <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/for-business" (click)="toggleMobileMenu()">For Your Business <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/for-corporate" (click)="toggleMobileMenu()">For Corporate <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/diaspora" (click)="toggleMobileMenu()">Diaspora <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/support" (click)="toggleMobileMenu()">Ways of Banking <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/treasury" (click)="toggleMobileMenu()">Treasury <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
-        <a routerLink="/bancassurance" (click)="toggleMobileMenu()">Bancassurance <i class="fa fa-chevron-right float-end mt-1" style="font-size: 0.8rem;"></i></a>
+      <div class="mobile-links d-flex flex-column gap-3 mb-5">
+        <a routerLink="/about-us" (click)="toggleMobileMenu()">About <i class="fa fa-chevron-right float-end mt-1 text-muted"></i></a>
+        <a routerLink="/internet-banking" (click)="toggleMobileMenu()">Digital <i class="fa fa-chevron-right float-end mt-1 text-muted"></i></a>
+        <a routerLink="/for-you" (click)="toggleMobileMenu()">Banking <i class="fa fa-chevron-right float-end mt-1 text-muted"></i></a>
+        <a routerLink="/support" (click)="toggleMobileMenu()">Support <i class="fa fa-chevron-right float-end mt-1 text-muted"></i></a>
+        <a routerLink="/careers" (click)="toggleMobileMenu()">Careers</a>
+      </div>
+      
+      <div class="d-flex flex-column gap-3 mt-auto">
+        <a routerLink="/for-you" (click)="toggleMobileMenu()" class="btn btn-outline-sbm w-100 py-3">Open Account</a>
+        <a routerLink="/internet-banking" (click)="toggleMobileMenu()" class="btn btn-internet-banking-unified w-100 py-3">Internet Banking</a>
       </div>
     </div>
+  </div>
 
-    <!-- Bottom Dark Blue Area -->
-    <div class="mobile-menu-navy px-4 py-4">
-      <div class="mobile-links-navy d-flex flex-wrap justify-content-center mb-4 gap-2">
-        <a routerLink="/about-us" (click)="toggleMobileMenu()">About Us</a>
-        <span class="separator">|</span>
-        <a routerLink="/investor-relations" (click)="toggleMobileMenu()">Investor Relations</a>
-        <span class="separator">|</span>
-        <a routerLink="/sustainability" (click)="toggleMobileMenu()">Sustainability</a>
-        <span class="separator">|</span>
-        <a routerLink="/careers" (click)="toggleMobileMenu()">Careers</a>
-        <span class="separator">|</span>
-        <a routerLink="/support" (click)="toggleMobileMenu()">Support</a>
-        <span class="separator">|</span>
-        <a routerLink="/newsroom" (click)="toggleMobileMenu()">Newsroom</a>
-      </div>
-      <div class="text-center mt-3">
-        <a routerLink="/internet-banking" (click)="toggleMobileMenu()" class="btn btn-internet-banking-mobile">Internet<br>Banking</a>
+  <!-- ========================================== -->
+  <!-- SECONDARY SUB-HEADER (Breadcrumb style) -->
+  <!-- ========================================== -->
+  <div class="sub-header-strip d-none d-lg-block">
+    <div class="container-fluid px-4 px-xl-5">
+      <div class="sub-header-breadcrumbs d-flex align-items-center">
+        <a routerLink="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-divider">/</span>
+        <a routerLink="/about-us" class="breadcrumb-link">About Us</a>
+        <span class="breadcrumb-divider">/</span>
+        <!-- Traditional Dropdown with Flyouts for Our Solutions -->
+        <div class="breadcrumb-dropdown position-relative d-inline-block">
+          <a routerLink="/solutions" class="breadcrumb-link active">Our Solutions <i class="fa fa-angle-down ms-1"></i></a>
+          
+          <ul class="dropdown-menu-custom shadow-sm">
+            <!-- For You -->
+            <li class="dropdown-item-custom">
+              <a href="javascript:void(0)">For You <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+              <div class="submenu-flyout shadow-premium">
+                <div class="row w-100 m-0">
+                  <div class="col-4 border-blue">
+                    <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Jivunie Current Account</a>
+                      <a href="#" class="mega-menu-link">Aspire Current Account</a>
+                      <a href="#" class="mega-menu-link">Elite Current Account</a>
+                      <a href="#" class="mega-menu-link">Platinum Saver Account</a>
+                      <a href="#" class="mega-menu-link">Instant Saver Account</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-orange">
+                    <div class="mega-menu-header text-orange"><i class="fa fa-credit-card"></i> Transact</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">SBM Cards</a>
+                      <a href="#" class="mega-menu-link">Mfukoni Mobile</a>
+                      <a href="#" class="mega-menu-link">Pesalink</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-green">
+                    <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Auto Loan</a>
+                      <a href="#" class="mega-menu-link">Mortgage</a>
+                      <a href="#" class="mega-menu-link">Salary Advance</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- For Business -->
+            <li class="dropdown-item-custom">
+              <a href="javascript:void(0)">For Business <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+              <div class="submenu-flyout shadow-premium">
+                <div class="row w-100 m-0">
+                  <div class="col-4 border-blue">
+                    <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Baraka Collection Account</a>
+                      <a href="#" class="mega-menu-link">Business Plus Current</a>
+                      <a href="#" class="mega-menu-link">Jijenge Biashara</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-orange">
+                    <div class="mega-menu-header text-orange"><i class="fa fa-cogs"></i> SME Solutions</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Mobile 2 Bank</a>
+                      <a href="#" class="mega-menu-link">Merchant Short Code</a>
+                      <a href="#" class="mega-menu-link">Asset Finance</a>
+                      <a href="#" class="mega-menu-link">Trade Finance</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-green">
+                    <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Unsecured MSME Loan</a>
+                      <a href="#" class="mega-menu-link">Term Loans</a>
+                      <a href="#" class="mega-menu-link">SBM Overdraft</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- For Corporate -->
+            <li class="dropdown-item-custom">
+              <a href="javascript:void(0)">For Corporate <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+              <div class="submenu-flyout shadow-premium">
+                <div class="row w-100 m-0">
+                  <div class="col-4 border-blue">
+                    <div class="mega-menu-header text-navy"><i class="fa fa-building"></i> Accounts & Deposits</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Corporate Current Account</a>
+                      <a href="#" class="mega-menu-link">Term and Call Deposits</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-orange">
+                    <div class="mega-menu-header text-orange"><i class="fa fa-globe"></i> Corporate Solutions</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">iTax Payment Solution</a>
+                      <a href="#" class="mega-menu-link">Trade Finance</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-green">
+                    <div class="mega-menu-header text-green"><i class="fa fa-chart-line"></i> Financing</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Asset Finance</a>
+                      <a href="#" class="mega-menu-link">Structured Term Loans</a>
+                      <a href="#" class="mega-menu-link">Crop Loan</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Diaspora -->
+            <li class="dropdown-item-custom">
+              <a href="javascript:void(0)">Diaspora <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+              <div class="submenu-flyout shadow-premium">
+                <div class="row w-100 m-0">
+                  <div class="col-4 border-blue">
+                    <div class="mega-menu-header text-navy"><i class="fa fa-plane"></i> Accounts</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">SBM Platinum Saver</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-orange">
+                    <div class="mega-menu-header text-orange"><i class="fa fa-home"></i> Invest</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Construction Loans</a>
+                      <a href="#" class="mega-menu-link">Mortgages</a>
+                      <a href="#" class="mega-menu-link">Shamba Loans</a>
+                    </div>
+                  </div>
+                  <div class="col-4 border-green">
+                    <div class="mega-menu-header text-green"><i class="fa fa-exchange"></i> Transact</div>
+                    <div class="mega-menu-list">
+                      <a href="#" class="mega-menu-link">Telegraphic Transfers (TT)</a>
+                      <a href="#" class="mega-menu-link">RTGS</a>
+                      <a href="#" class="mega-menu-link">Money Transfer Services</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

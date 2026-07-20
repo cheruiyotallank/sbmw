@@ -140,6 +140,12 @@ export class HeaderComponent {
     }
   }
 
+  activeSolutionTab: 'for-you' | 'for-business' | 'for-corporate' | 'diaspora' = 'for-you';
+
+  setSolutionTab(tab: 'for-you' | 'for-business' | 'for-corporate' | 'diaspora') {
+    this.activeSolutionTab = tab;
+  }
+
   @HostListener('window:resize')
   onResize() {
     // If we resize to desktop width, automatically close the mobile menu
