@@ -17,9 +17,9 @@
       </a>
 
       <!-- ========================================== -->
-      <!-- CENTER: Main Navigation -->
+      <!-- CENTER/RIGHT: Main Navigation -->
       <!-- ========================================== -->
-      <nav class="main-nav d-none d-lg-flex align-items-center justify-content-center flex-grow-1 gap-4 gap-xl-5">
+      <nav class="main-nav d-none d-lg-flex align-items-center justify-content-end flex-grow-1 gap-4 gap-xl-5 me-4">
         
         <!-- About -->
         <div class="nav-item-dropdown">
@@ -85,9 +85,9 @@
         <!-- Banking -->
         <div class="nav-item-dropdown">
           <a routerLink="/for-you" class="nav-main-link" routerLinkActive="active" (keydown)="onMegaMenuKeyDown($event, 2)" tabindex="0">Banking</a>
-          <div class="mega-menu shadow-premium">
+          <div class="mega-menu shadow-premium" style="width: 850px; left: 50%; transform: translateX(-50%) translateY(15px);">
             <div class="row w-100 m-0">
-              <div class="col-4 mega-menu-column border-blue">
+              <div class="col-3 mega-menu-column border-blue">
                 <div class="mega-menu-header text-navy"><i class="fa fa-user"></i> Personal</div>
                 <div class="mega-menu-list">
                   <a routerLink="/for-you" class="mega-menu-link">Current Accounts</a>
@@ -95,7 +95,7 @@
                   <a routerLink="/for-you" class="mega-menu-link">Loans & Mortgages</a>
                 </div>
               </div>
-              <div class="col-4 mega-menu-column border-orange">
+              <div class="col-3 mega-menu-column border-orange">
                 <div class="mega-menu-header text-orange"><i class="fa fa-briefcase"></i> Business</div>
                 <div class="mega-menu-list">
                   <a routerLink="/for-business" class="mega-menu-link">SME Accounts</a>
@@ -103,11 +103,18 @@
                   <a routerLink="/for-business" class="mega-menu-link">Trade Finance</a>
                 </div>
               </div>
-              <div class="col-4 mega-menu-column border-green">
+              <div class="col-3 mega-menu-column border-green">
                 <div class="mega-menu-header text-green"><i class="fa fa-building"></i> Corporate</div>
                 <div class="mega-menu-list">
                   <a routerLink="/for-corporate" class="mega-menu-link">Corporate Accounts</a>
                   <a routerLink="/for-corporate" class="mega-menu-link">Treasury Services</a>
+                </div>
+              </div>
+              <div class="col-3 mega-menu-column border-blue">
+                <div class="mega-menu-header text-navy"><i class="fa fa-plane"></i> Diaspora</div>
+                <div class="mega-menu-list">
+                  <a routerLink="/diaspora" class="mega-menu-link">Diaspora Accounts</a>
+                  <a routerLink="/diaspora" class="mega-menu-link">Invest & Transact</a>
                 </div>
               </div>
             </div>
@@ -181,7 +188,6 @@
         </div>
 
         <!-- CTAs -->
-        <a routerLink="/for-you" class="btn btn-outline-sbm rounded-pill">Open Account</a>
         <a routerLink="/internet-banking" class="btn btn-internet-banking-unified rounded-pill d-flex align-items-center gap-2">
           <i class="fa fa-lock"></i> Internet Banking
         </a>
@@ -214,7 +220,6 @@
       </div>
       
       <div class="d-flex flex-column gap-3 mt-auto">
-        <a routerLink="/for-you" (click)="toggleMobileMenu()" class="btn btn-outline-sbm w-100 py-3">Open Account</a>
         <a routerLink="/internet-banking" (click)="toggleMobileMenu()" class="btn btn-internet-banking-unified w-100 py-3">Internet Banking</a>
       </div>
     </div>
@@ -225,148 +230,158 @@
   <!-- ========================================== -->
   <div class="sub-header-strip d-none d-lg-block">
     <div class="container-fluid px-4 px-xl-5">
-      <div class="sub-header-breadcrumbs d-flex align-items-center">
-        <a routerLink="/" class="breadcrumb-link">Home</a>
-        <span class="breadcrumb-divider">/</span>
-        <a routerLink="/about-us" class="breadcrumb-link">About Us</a>
-        <span class="breadcrumb-divider">/</span>
-        <!-- Traditional Dropdown with Flyouts for Our Solutions -->
-        <div class="breadcrumb-dropdown position-relative d-inline-block">
-          <a routerLink="/solutions" class="breadcrumb-link active">Our Solutions <i class="fa fa-angle-down ms-1"></i></a>
-          
-          <ul class="dropdown-menu-custom shadow-sm">
-            <!-- For You -->
-            <li class="dropdown-item-custom">
-              <a href="javascript:void(0)">For You <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
-              <div class="submenu-flyout shadow-premium">
-                <div class="row w-100 m-0">
-                  <div class="col-4 border-blue">
-                    <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Jivunie Current Account</a>
-                      <a href="#" class="mega-menu-link">Aspire Current Account</a>
-                      <a href="#" class="mega-menu-link">Elite Current Account</a>
-                      <a href="#" class="mega-menu-link">Platinum Saver Account</a>
-                      <a href="#" class="mega-menu-link">Instant Saver Account</a>
+      <div class="d-flex align-items-center justify-content-between">
+        
+        <!-- Left Side: Breadcrumbs -->
+        <div class="sub-header-breadcrumbs d-flex align-items-center">
+          <a routerLink="/" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-divider">/</span>
+          <a routerLink="/about-us" class="breadcrumb-link">About Us</a>
+          <span class="breadcrumb-divider">/</span>
+          <!-- Traditional Dropdown with Flyouts for Our Solutions -->
+          <div class="breadcrumb-dropdown position-relative d-flex align-items-center">
+            <a routerLink="/solutions" class="breadcrumb-link active">Our Solutions <i class="fa fa-angle-down ms-1"></i></a>
+            
+            <ul class="dropdown-menu-custom shadow-sm">
+              <!-- For You -->
+              <li class="dropdown-item-custom">
+                <a href="javascript:void(0)">For You <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+                <div class="submenu-flyout shadow-premium">
+                  <div class="row w-100 m-0">
+                    <div class="col-4 border-blue">
+                      <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Jivunie Current Account</a>
+                        <a href="#" class="mega-menu-link">Aspire Current Account</a>
+                        <a href="#" class="mega-menu-link">Elite Current Account</a>
+                        <a href="#" class="mega-menu-link">Platinum Saver Account</a>
+                        <a href="#" class="mega-menu-link">Instant Saver Account</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-orange">
-                    <div class="mega-menu-header text-orange"><i class="fa fa-credit-card"></i> Transact</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">SBM Cards</a>
-                      <a href="#" class="mega-menu-link">Mfukoni Mobile</a>
-                      <a href="#" class="mega-menu-link">Pesalink</a>
+                    <div class="col-4 border-orange">
+                      <div class="mega-menu-header text-orange"><i class="fa fa-credit-card"></i> Transact</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">SBM Cards</a>
+                        <a href="#" class="mega-menu-link">Mfukoni Mobile</a>
+                        <a href="#" class="mega-menu-link">Pesalink</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-green">
-                    <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Auto Loan</a>
-                      <a href="#" class="mega-menu-link">Mortgage</a>
-                      <a href="#" class="mega-menu-link">Salary Advance</a>
+                    <div class="col-4 border-green">
+                      <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Auto Loan</a>
+                        <a href="#" class="mega-menu-link">Mortgage</a>
+                        <a href="#" class="mega-menu-link">Salary Advance</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- For Business -->
-            <li class="dropdown-item-custom">
-              <a href="javascript:void(0)">For Business <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
-              <div class="submenu-flyout shadow-premium">
-                <div class="row w-100 m-0">
-                  <div class="col-4 border-blue">
-                    <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Baraka Collection Account</a>
-                      <a href="#" class="mega-menu-link">Business Plus Current</a>
-                      <a href="#" class="mega-menu-link">Jijenge Biashara</a>
+              <!-- For Business -->
+              <li class="dropdown-item-custom">
+                <a href="javascript:void(0)">For Business <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+                <div class="submenu-flyout shadow-premium">
+                  <div class="row w-100 m-0">
+                    <div class="col-4 border-blue">
+                      <div class="mega-menu-header text-navy"><i class="fa fa-id-card"></i> Open an Account</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Baraka Collection Account</a>
+                        <a href="#" class="mega-menu-link">Business Plus Current</a>
+                        <a href="#" class="mega-menu-link">Jijenge Biashara</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-orange">
-                    <div class="mega-menu-header text-orange"><i class="fa fa-cogs"></i> SME Solutions</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Mobile 2 Bank</a>
-                      <a href="#" class="mega-menu-link">Merchant Short Code</a>
-                      <a href="#" class="mega-menu-link">Asset Finance</a>
-                      <a href="#" class="mega-menu-link">Trade Finance</a>
+                    <div class="col-4 border-orange">
+                      <div class="mega-menu-header text-orange"><i class="fa fa-cogs"></i> SME Solutions</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Mobile 2 Bank</a>
+                        <a href="#" class="mega-menu-link">Merchant Short Code</a>
+                        <a href="#" class="mega-menu-link">Asset Finance</a>
+                        <a href="#" class="mega-menu-link">Trade Finance</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-green">
-                    <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Unsecured MSME Loan</a>
-                      <a href="#" class="mega-menu-link">Term Loans</a>
-                      <a href="#" class="mega-menu-link">SBM Overdraft</a>
+                    <div class="col-4 border-green">
+                      <div class="mega-menu-header text-green"><i class="fa fa-money"></i> Get a Loan</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Unsecured MSME Loan</a>
+                        <a href="#" class="mega-menu-link">Term Loans</a>
+                        <a href="#" class="mega-menu-link">SBM Overdraft</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- For Corporate -->
-            <li class="dropdown-item-custom">
-              <a href="javascript:void(0)">For Corporate <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
-              <div class="submenu-flyout shadow-premium">
-                <div class="row w-100 m-0">
-                  <div class="col-4 border-blue">
-                    <div class="mega-menu-header text-navy"><i class="fa fa-building"></i> Accounts & Deposits</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Corporate Current Account</a>
-                      <a href="#" class="mega-menu-link">Term and Call Deposits</a>
+              <!-- For Corporate -->
+              <li class="dropdown-item-custom">
+                <a href="javascript:void(0)">For Corporate <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+                <div class="submenu-flyout shadow-premium">
+                  <div class="row w-100 m-0">
+                    <div class="col-4 border-blue">
+                      <div class="mega-menu-header text-navy"><i class="fa fa-building"></i> Accounts & Deposits</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Corporate Current Account</a>
+                        <a href="#" class="mega-menu-link">Term and Call Deposits</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-orange">
-                    <div class="mega-menu-header text-orange"><i class="fa fa-globe"></i> Corporate Solutions</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">iTax Payment Solution</a>
-                      <a href="#" class="mega-menu-link">Trade Finance</a>
+                    <div class="col-4 border-orange">
+                      <div class="mega-menu-header text-orange"><i class="fa fa-globe"></i> Corporate Solutions</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">iTax Payment Solution</a>
+                        <a href="#" class="mega-menu-link">Trade Finance</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-green">
-                    <div class="mega-menu-header text-green"><i class="fa fa-chart-line"></i> Financing</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Asset Finance</a>
-                      <a href="#" class="mega-menu-link">Structured Term Loans</a>
-                      <a href="#" class="mega-menu-link">Crop Loan</a>
+                    <div class="col-4 border-green">
+                      <div class="mega-menu-header text-green"><i class="fa fa-chart-line"></i> Financing</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Asset Finance</a>
+                        <a href="#" class="mega-menu-link">Structured Term Loans</a>
+                        <a href="#" class="mega-menu-link">Crop Loan</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- Diaspora -->
-            <li class="dropdown-item-custom">
-              <a href="javascript:void(0)">Diaspora <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
-              <div class="submenu-flyout shadow-premium">
-                <div class="row w-100 m-0">
-                  <div class="col-4 border-blue">
-                    <div class="mega-menu-header text-navy"><i class="fa fa-plane"></i> Accounts</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">SBM Platinum Saver</a>
+              <!-- Diaspora -->
+              <li class="dropdown-item-custom">
+                <a href="javascript:void(0)">Diaspora <i class="fa fa-angle-right float-end mt-1 text-muted"></i></a>
+                <div class="submenu-flyout shadow-premium">
+                  <div class="row w-100 m-0">
+                    <div class="col-4 border-blue">
+                      <div class="mega-menu-header text-navy"><i class="fa fa-plane"></i> Accounts</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">SBM Platinum Saver</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-orange">
-                    <div class="mega-menu-header text-orange"><i class="fa fa-home"></i> Invest</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Construction Loans</a>
-                      <a href="#" class="mega-menu-link">Mortgages</a>
-                      <a href="#" class="mega-menu-link">Shamba Loans</a>
+                    <div class="col-4 border-orange">
+                      <div class="mega-menu-header text-orange"><i class="fa fa-home"></i> Invest</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Construction Loans</a>
+                        <a href="#" class="mega-menu-link">Mortgages</a>
+                        <a href="#" class="mega-menu-link">Shamba Loans</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-4 border-green">
-                    <div class="mega-menu-header text-green"><i class="fa fa-exchange"></i> Transact</div>
-                    <div class="mega-menu-list">
-                      <a href="#" class="mega-menu-link">Telegraphic Transfers (TT)</a>
-                      <a href="#" class="mega-menu-link">RTGS</a>
-                      <a href="#" class="mega-menu-link">Money Transfer Services</a>
+                    <div class="col-4 border-green">
+                      <div class="mega-menu-header text-green"><i class="fa fa-exchange"></i> Transact</div>
+                      <div class="mega-menu-list">
+                        <a href="#" class="mega-menu-link">Telegraphic Transfers (TT)</a>
+                        <a href="#" class="mega-menu-link">RTGS</a>
+                        <a href="#" class="mega-menu-link">Money Transfer Services</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Right Side: Forex Ticker -->
+        <div class="sub-header-forex ms-auto" style="width: 50%; max-width: 600px;">
+          <app-forex-ticker></app-forex-ticker>
+        </div>
+
       </div>
     </div>
   </div>

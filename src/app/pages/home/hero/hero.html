@@ -37,27 +37,17 @@
           </ng-container>
         </div>
 
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators-modern d-flex gap-2 mt-4">
-          <button
-            type="button"
-            *ngFor="let slide of slides; index as index"
-            class="carousel-dot-modern"
-            [class.active]="index === activeSlide"
-            (click)="selectSlide(index)"
-            [attr.aria-label]="'Go to slide ' + (index + 1)">
-          </button>
-        </div>
+
 
       </div>
 
       <!-- ========================================== -->
       <!-- RIGHT SIDE (50%): Floating Image Showcase  -->
       <!-- ========================================== -->
-      <div class="col-lg-6 hero-visual-right position-relative mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
+      <div class="col-lg-6 hero-visual-right position-relative mt-4 mt-lg-0 d-flex justify-content-center align-items-center z-3">
         
         <!-- Main Floating Image Container (Now freely floating and highly visible) -->
-        <div class="hero-floating-image-container position-relative z-2">
+        <div class="hero-floating-image-container position-relative z-3">
            <ng-container *ngFor="let slide of slides; let i = index">
              <img 
                 [src]="slide.image" 
@@ -66,8 +56,9 @@
                 alt="Hero Visual">
            </ng-container>
         </div>
-
-        <!-- Floating UI Element 1: Real-time Stats -->
+        
+<!-- 
+        <!-- Floating UI Element 1: Real-time Stats 
         <div class="floating-ui-card ui-card-top-right glassmorphism-panel shadow-sm position-absolute z-3">
             <div class="d-flex align-items-center gap-3">
                 <div class="icon-circle bg-sbm-accent text-white"><i class="fa fa-bolt"></i></div>
@@ -78,13 +69,15 @@
             </div>
         </div>
 
-        <!-- Floating UI Element 2: Security Badge -->
+        Floating UI Element 2: Security Badge 
         <div class="floating-ui-card ui-card-bottom-left glassmorphism-panel shadow-sm position-absolute z-3">
             <div class="d-flex align-items-center gap-3">
                 <div class="icon-circle bg-sbm-blue text-white"><i class="fa fa-shield-alt"></i></div>
                 <strong class="text-sbm-navy">100% Secure</strong>
             </div>
-        </div>
+        </div> 
+      -->
+      
         
         <!-- Decorative Background Glow -->
         <div class="decorative-glow glow-1 position-absolute"></div>

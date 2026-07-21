@@ -2,11 +2,12 @@ import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router, ActivatedRoute } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
+import { ForexTicker } from '../../pages/home/forex-ticker/forex-ticker';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, LogoComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, LogoComponent, ForexTicker],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

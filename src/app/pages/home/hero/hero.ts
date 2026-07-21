@@ -57,7 +57,7 @@ export class Hero implements OnInit, OnDestroy {
     this.rotationHandle = window.setInterval(() => {
       this.nextSlide();
       this.cdr.detectChanges();
-    }, 8000);
+    }, 4000);
   }
 
   nextSlide(): void {

@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, rgba(230, 244, 255, 0.7) 0%, rgba(248, 250, 252, 1) 100%);
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-gradient-bg::before {
@@ -31,7 +31,7 @@
   height: 80%;
   background: radial-gradient(circle, rgba(26, 163, 216, 0.08) 0%, rgba(255,255,255,0) 70%);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* ==========================================
@@ -72,7 +72,7 @@
 }
 
 .hero-title-massive {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
   color: var(--sbm-navy);
@@ -118,7 +118,8 @@
   background: linear-gradient(135deg, var(--sbm-blue), var(--sbm-navy));
   color: #fff !important;
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.5rem; /* Reduced size */
+  font-size: 0.95rem; /* slightly smaller font */
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -154,7 +155,7 @@
    Right Side: Floating Visuals
    ========================================== */
 .hero-visual-right {
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 .glassmorphism-panel {
@@ -171,36 +172,43 @@
 
 /* Main Image Slides */
 .hero-floating-image-container {
-  width: 100%;
-  max-width: 550px;
-  aspect-ratio: 4/3;
+  width: 120%; /* Break out of the column bounds */
+  max-width: 650px; /* Allow it to be slightly larger */
+  aspect-ratio: 16/9;
   position: relative;
-  animation: dynamic-float 6s ease-in-out infinite;
+  right: -10%; /* Shift right */
+  animation: dynamic-float 8s ease-in-out infinite;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-style: preserve-3d;
 }
 
 @keyframes dynamic-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0) rotateX(15deg) rotateY(-20deg) rotateZ(5deg); }
+  50% { transform: translateY(-30px) rotateX(18deg) rotateY(-25deg) rotateZ(8deg); }
 }
 
 .hero-floating-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
+  object-fit: contain;
+  border-radius: 16px;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
-  box-shadow: 0 30px 60px rgba(11, 52, 113, 0.25);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 4px solid rgba(255, 255, 255, 0.6);
+  /* Massive detached levitation shadow */
+  box-shadow: -25px 45px 90px rgba(11, 52, 113, 0.4), -10px 20px 40px rgba(0, 0, 0, 0.15);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 6px solid white; /* Canvas edge illusion */
+  z-index: 1;
+  pointer-events: none;
 }
 .hero-floating-img.active-image {
   opacity: 1;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 /* Floating UI Cards */
@@ -244,7 +252,7 @@
   height: 200px;
   border-radius: 50%;
   filter: blur(60px);
-  z-index: 1;
+  z-index: 0;
   opacity: 0.5;
 }
 .glow-1 {
