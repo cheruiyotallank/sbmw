@@ -3,12 +3,12 @@
   <div class="container-fluid px-4 px-xl-5 position-relative z-3">
     
     <!-- Centered Header -->
-    <div class="row mb-5 text-center justify-content-center pt-5">
+    <div class="row mb-4 text-center justify-content-center pt-2">
       <div class="col-lg-8">
-        <div class="pill-badge-gold mx-auto mb-4 fx-reveal-item" appScrollReveal>
+        <div class="pill-badge-gold mx-auto mb-3 fx-reveal-item" appScrollReveal>
           <span class="dot-gold"></span> Premium Experience
         </div>
-        <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal style="font-size: clamp(2.5rem, 5vw, 4rem);">
+        <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal style="font-size: clamp(2rem, 4vw, 3rem);">
           <span class="elite-gold-text">Elite Banking</span> <br>
           For a Smarter Tomorrow
         </h2>
@@ -18,63 +18,15 @@
       </div>
     </div>
 
-    <!-- Glassmorphism Cards Grid -->
-    <div class="row g-4 justify-content-center pb-4">
-      
-      <!-- Card 1 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-1" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-diamond"></i></div>
-          <h4>Wealth Management</h4>
-          <p>Expert guidance for growing and protecting your wealth across generations.</p>
+    <!-- Compact Grid of Glassmorphism Cards -->
+    <div class="row g-3 justify-content-center pb-4 fx-reveal-item fx-delay-3" appScrollReveal>
+      <div *ngFor="let card of eliteCards" class="col-6 col-md-4 col-xl-2">
+        <div class="elite-glass-card h-100 text-center">
+          <div class="icon-wrapper mx-auto"><i [class]="card.icon"></i></div>
+          <h4>{{ card.title }}</h4>
+          <p>{{ card.desc }}</p>
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-2" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-user-tie"></i></div>
-          <h4>Dedicated Manager</h4>
-          <p>A personal relationship manager who understands your unique financial needs.</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-3" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-headset"></i></div>
-          <h4>Priority Support</h4>
-          <p>24/7 dedicated customer service line for immediate, specialized assistance.</p>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-4" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-star"></i></div>
-          <h4>Exclusive Privileges</h4>
-          <p>Premium lifestyle benefits, travel perks, and exclusive member rewards.</p>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-5" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-gem"></i></div>
-          <h4>Bespoke Solutions</h4>
-          <p>Tailored banking and credit solutions designed precisely for you.</p>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-6" appScrollReveal>
-        <div class="elite-glass-card h-100">
-          <div class="icon-wrapper"><i class="fa fa-globe"></i></div>
-          <h4>Global Access</h4>
-          <p>Seamless banking and priority services across multiple countries worldwide.</p>
-        </div>
-      </div>
-
     </div>
 
     <!-- CTA Button -->

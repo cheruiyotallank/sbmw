@@ -27,13 +27,13 @@ export class Hero implements OnInit, OnDestroy {
       title: 'Fly Across Kenya With Jambojet', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/support',
-      image: 'assets/sbmPhotos/photo5.png'
+      image: 'assets/sbmPhotos/photo11.jpg'
     },
     {
       title: 'Busara -> Kids Banking App', 
       ctaLabel: 'Learn more',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo6.png'
+      image: 'assets/sbmPhotos/photo9.jpg'
     }
   ];
 

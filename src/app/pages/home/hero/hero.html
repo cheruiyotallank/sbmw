@@ -13,38 +13,34 @@
   </div>
 
   <!-- Centered Content -->
-  <div class="container-fluid px-4 px-xl-5 position-relative z-3 h-100">
-    <div class="row align-items-center justify-content-center h-100 min-vh-75 py-5 text-center">
+  <div class="container-fluid px-4 px-xl-5 position-relative z-3 h-100 d-flex flex-column align-items-center justify-content-center">
+    <div class="hero-content-centered w-100 text-center d-flex flex-column align-items-center justify-content-center position-relative">
       
-      <div class="col-lg-8 hero-content-centered position-relative">
-        
-        <!-- Small Pill Badge -->
-        <div class="hero-pill-badge mx-auto mb-4 bg-white text-navy shadow-sm">
-          <span class="dot pulse-animation"></span> Next-Gen Banking
-        </div>
-        
-        <!-- Animated Slide Text Content -->
-        <div class="slide-text-wrapper position-relative mx-auto" style="min-height: 220px; max-width: 1200px;">
-          <ng-container *ngFor="let slide of slides; let i = index">
-            <div class="slide-text-content w-100" [class.active-text]="i === activeSlide">
-              <div class="hero-glass-panel p-4 p-md-5 mx-auto rounded-4" style="max-width: 850px;">
-                <h1 class="hero-title-massive mb-4" *ngIf="slide.title">
-                  {{ slide.title }}
-                </h1>
-                <p class="hero-subtitle lead mb-5 mx-auto" style="max-width: 700px;">
-                  Experience seamless digital banking designed to empower your personal and business growth in Kenya and beyond.
-                </p>
-                <!-- Call to Action -->
-                <div class="hero-actions d-flex justify-content-center flex-wrap gap-3">
-                  <a [routerLink]="slide.ctaLink" class="btn-action-primary px-4 py-2 fs-6 shadow-lg">
-                    {{ slide.ctaLabel }} <i class="fa fa-arrow-right ms-2"></i>
-                  </a>
-                </div>
+      <!-- Small Pill Badge -->
+      <div class="hero-pill-badge mx-auto mb-4 bg-white text-navy shadow-sm">
+        <span class="dot pulse-animation"></span> Next-Gen Banking
+      </div>
+      
+      <!-- Animated Slide Text Content -->
+      <div class="slide-text-wrapper position-relative mx-auto w-100">
+        <ng-container *ngFor="let slide of slides; let i = index">
+          <div class="slide-text-content w-100" [class.active-text]="i === activeSlide">
+            <div class="hero-glass-panel mx-auto text-center w-100 d-flex flex-column align-items-center justify-content-center">
+              <h1 class="hero-title-massive mb-3 mx-auto text-center d-block" *ngIf="slide.title">
+                {{ slide.title }}
+              </h1>
+              <p class="hero-subtitle lead mb-4 mx-auto text-center d-block">
+                Experience seamless digital banking designed to empower your personal and business growth in Kenya and beyond.
+              </p>
+              <!-- Call to Action -->
+              <div class="hero-actions d-flex justify-content-center align-items-center flex-wrap gap-3 mx-auto w-100">
+                <a [routerLink]="slide.ctaLink" class="btn-action-primary px-4 py-2 fs-6 shadow-lg text-center">
+                  {{ slide.ctaLabel }} <i class="fa fa-arrow-right ms-2"></i>
+                </a>
               </div>
             </div>
-          </ng-container>
-        </div>
-
+          </div>
+        </ng-container>
       </div>
 
     </div>

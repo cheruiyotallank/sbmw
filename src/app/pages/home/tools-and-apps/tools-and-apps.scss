@@ -3,7 +3,7 @@
    ========================================== */
 
 #tools-and-apps {
-  background-color: #ffffff; /* Pure white contrast */
+  background: #f4f8fb; /* Solid light background so all white cards pop */
   padding: 5rem 0;
 }
 
@@ -21,10 +21,11 @@
    ------------------------------------------ */
 .tool-card-modern {
   background: #ffffff;
-  border: 1px solid rgba(11, 52, 113, 0.05);
-  border-radius: 24px;
+  border: 1px solid rgba(26, 163, 216, 0.15); /* Slightly visible cyan-tinted border */
+  border-top: 4px solid #1aa3d8; /* Distinct SBM Cyan top border */
+  border-radius: 20px;
   padding: 2.5rem 1.5rem;
-  box-shadow: 0 10px 30px rgba(11, 52, 113, 0.05);
+  box-shadow: 0 15px 35px rgba(11, 52, 113, 0.08); /* Stronger shadow to pop out */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -48,8 +49,8 @@
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(11, 52, 113, 0.12);
-    border-color: rgba(26, 163, 216, 0.3);
+    box-shadow: 0 25px 50px rgba(11, 52, 113, 0.15);
+    border-color: rgba(26, 163, 216, 0.4);
 
     &::before {
       opacity: 1;
@@ -57,18 +58,18 @@
 
     .tool-icon-wrapper {
       transform: scale(1.1);
-      background: var(--sbm-navy);
+      background: linear-gradient(135deg, #1aa3d8, #008cb7);
       color: #fff;
-      box-shadow: 0 15px 30px rgba(11, 52, 113, 0.2);
+      box-shadow: 0 15px 30px rgba(26, 163, 216, 0.3);
     }
   }
 }
 
 .tool-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(26, 163, 216, 0.1), rgba(11, 52, 113, 0.05));
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; /* Circle icon wrapper for a friendlier look */
+  background: rgba(26, 163, 216, 0.1);
   color: #1aa3d8; /* SBM Cyan */
   display: flex;
   align-items: center;
@@ -76,31 +77,33 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(26, 163, 216, 0.2);
 }
 
 .tool-text {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 800;
   color: var(--sbm-navy);
   margin: 0;
 }
 
 /* ------------------------------------------
-   App Download Cards (Dark Premium)
+   App Download Cards (Light Premium)
    ------------------------------------------ */
-.app-card-dark {
-  background: linear-gradient(135deg, #050b14 0%, #0b3471 100%);
+.app-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(26, 163, 216, 0.15);
   border-radius: 30px;
   padding: 3rem;
-  box-shadow: 0 20px 50px rgba(11, 52, 113, 0.15);
-  color: #ffffff;
+  box-shadow: 0 15px 40px rgba(11, 52, 113, 0.08);
+  color: var(--sbm-navy);
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(11, 52, 113, 0.25);
+    box-shadow: 0 25px 60px rgba(11, 52, 113, 0.15);
   }
 
   &::after {
@@ -110,7 +113,7 @@
     right: -50px;
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, rgba(26, 163, 216, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(26, 163, 216, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -136,11 +139,12 @@
     font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
+    color: var(--sbm-navy);
   }
   
   p {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #4a5568; /* Readable dark gray for light background */
     margin-bottom: 0;
   }
 }
