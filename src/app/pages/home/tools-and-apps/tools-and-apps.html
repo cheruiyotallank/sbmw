@@ -1,51 +1,66 @@
-<!-- Tools & Apps Row -->
-<section id="tools-and-apps" class="section-block alt-block">
+<section id="tools-and-apps" class="section-block bg-white position-relative">
   <div class="container-fluid px-4 px-xl-5">
     
     <!-- Tools Row -->
-    <div class="tools-section mb-5 pb-3">
-      <h2 class="section-header-navy mb-4 fx-reveal-item" appScrollReveal>Tools to bank with ease</h2>
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6 fx-reveal-item fx-delay-1" appScrollReveal>
-          <div role="button" tabindex="0" class="navy-tool-btn">
-            <div class="tool-icon-circle"><i class="fa fa-map-marker"></i></div>
-            <span class="tool-text">SBM Branch, ATM or Agent near me</span>
+    <div class="tools-section mb-5 pb-4 text-center">
+      <h2 class="massive-title text-sbm-navy mb-5 fx-reveal-item" appScrollReveal>Tools to bank with ease</h2>
+      
+      <div class="row g-4 justify-content-center">
+        <!-- Tool 1 -->
+        <div class="col-6 col-md-3 fx-reveal-item fx-delay-1" appScrollReveal>
+          <div role="button" tabindex="0" class="tool-card-modern">
+            <div class="tool-icon-wrapper">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <h4 class="tool-text">Find a Branch</h4>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 fx-reveal-item fx-delay-2" appScrollReveal>
-          <div role="button" tabindex="0" class="navy-tool-btn">
-            <div class="tool-icon-circle"><i class="fa fa-file-pdf-o"></i></div>
-            <span class="tool-text">Resources</span>
+        <!-- Tool 2 -->
+        <div class="col-6 col-md-3 fx-reveal-item fx-delay-2" appScrollReveal>
+          <div role="button" tabindex="0" class="tool-card-modern">
+            <div class="tool-icon-wrapper">
+              <i class="fa fa-file-pdf-o"></i>
+            </div>
+            <h4 class="tool-text">Resources</h4>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 fx-reveal-item fx-delay-3" appScrollReveal>
-          <div role="button" tabindex="0" class="navy-tool-btn">
-            <div class="tool-icon-circle"><i class="fa fa-phone"></i></div>
-            <span class="tool-text">Contact Us</span>
+        <!-- Tool 3 -->
+        <div class="col-6 col-md-3 fx-reveal-item fx-delay-3" appScrollReveal>
+          <div role="button" tabindex="0" class="tool-card-modern">
+            <div class="tool-icon-wrapper">
+              <i class="fa fa-phone"></i>
+            </div>
+            <h4 class="tool-text">Contact Us</h4>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 fx-reveal-item fx-delay-4" appScrollReveal>
-          <div role="button" tabindex="0" class="navy-tool-btn">
-            <div class="tool-icon-circle"><i class="fa fa-question-circle"></i></div>
-            <span class="tool-text">Frequently Asked Questions</span>
+        <!-- Tool 4 -->
+        <div class="col-6 col-md-3 fx-reveal-item fx-delay-4" appScrollReveal>
+          <div role="button" tabindex="0" class="tool-card-modern">
+            <div class="tool-icon-wrapper">
+              <i class="fa fa-question-circle"></i>
+            </div>
+            <h4 class="tool-text">FAQs</h4>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Apps Row -->
-    <div class="apps-download-section pt-4">
-      <div class="row g-4 align-items-stretch">
+    <div class="apps-download-section pt-5 border-top">
+      <div class="row g-5 align-items-stretch">
         
         <!-- Mobile App Card -->
         <div class="col-lg-6 fx-reveal-item fx-delay-1" appScrollReveal>
-          <div class="banking-tool-card">
-            <div class="card-content d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap">
-              <img src="assets/images/sbm-app-logo.png" alt="SBM Mobile App Logo" class="tool-logo-img">
-              <div class="app-info-visual">
-                <h3>SBM Mfukoni Mobile App</h3>
-                <p>Stay connected, enjoy convenience and peace of mind</p>
-                <div class="app-badges-row">
+          <div class="app-card-dark h-100">
+            <div class="card-content d-flex align-items-center gap-4 flex-column flex-sm-row text-center text-sm-start">
+              <div class="app-image-container">
+                <img src="assets/images/sbm-app-logo.png" alt="SBM Mobile App Logo" class="app-logo-glow">
+              </div>
+              <div class="app-info-visual flex-grow-1">
+                <div class="pill-badge-cyan mb-2">Mobile Banking</div>
+                <h3>SBM Mfukoni App</h3>
+                <p>Stay connected, enjoy convenience and complete peace of mind on the go.</p>
+                <div class="app-badges-row justify-content-center justify-content-sm-start mt-4">
                   <a href="#" class="store-badge-link">
                     <img src="assets/images/google-play-badge.png" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg'" alt="Get it on Google Play" class="store-badge-img">
                   </a>
@@ -60,13 +75,16 @@
 
         <!-- Internet Banking Card -->
         <div class="col-lg-6 fx-reveal-item fx-delay-2" appScrollReveal>
-          <div class="banking-tool-card">
-            <div class="card-content d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap">
-              <img src="assets/images/sbm-laptop-login.png" alt="SBM Internet Banking Login" class="tool-laptop-img">
-              <div class="app-info-visual">
-                <h3>SBM Internet Banking</h3>
-                <p>Stay connected, enjoy convenience and peace of mind</p>
-                <a routerLink="/internet-banking" class="btn btn-sbm-login mt-2">LOG IN <i class="fa fa-arrow-right ms-2"></i></a>
+          <div class="app-card-dark h-100">
+            <div class="card-content d-flex align-items-center gap-4 flex-column flex-sm-row text-center text-sm-start">
+              <div class="app-image-container">
+                <img src="assets/images/sbm-laptop-login.png" alt="SBM Internet Banking" class="app-laptop-img">
+              </div>
+              <div class="app-info-visual flex-grow-1">
+                <div class="pill-badge-cyan mb-2">Web Portal</div>
+                <h3>Internet Banking</h3>
+                <p>Secure, full-featured banking from the comfort of your home or office.</p>
+                <a routerLink="/internet-banking" class="btn btn-cyan-glow mt-3">LOGIN SECURELY <i class="fa fa-lock ms-2"></i></a>
               </div>
             </div>
           </div>

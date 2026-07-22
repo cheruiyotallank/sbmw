@@ -1,98 +1,88 @@
-<section id="elite-banking" class="section-block bg-white overflow-hidden">
-  <div class="container-fluid px-4 px-xl-5">
+<section id="elite-banking" class="section-block elite-premium-section position-relative overflow-hidden">
+  
+  <div class="container-fluid px-4 px-xl-5 position-relative z-3">
     
-    <!-- Top Row: Left-Aligned Header Text and Right Photo -->
-    <div class="row mb-5 align-items-center">
-      <div class="col-lg-6 text-start">
-        <h2 class="massive-title fx-reveal-item" appScrollReveal style="font-size: clamp(2.5rem, 5vw, 4rem);">
-          <span class="elite-gradient-text">Elite Banking</span> <br>
-          <span style="color: var(--sbm-navy);">SBM bank</span>
-        </h2>
-        <p class="lead-text fx-reveal-item fx-delay-1" appScrollReveal style="max-width: 800px; color: var(--sbm-muted); font-size: 1.5rem; font-weight: 500;">
-          For a Smarter Tomorrow.
-        </p>
-      </div>
-      <div class="col-lg-6 d-flex justify-content-center justify-content-lg-start mt-4 mt-lg-0 fx-reveal-item fx-delay-2" appScrollReveal>
-        <div class="floating-photo">
-          <img src="assets/sbmPhotos/elitebanking.png" alt="Elite Experience">
+    <!-- Centered Header -->
+    <div class="row mb-5 text-center justify-content-center pt-5">
+      <div class="col-lg-8">
+        <div class="pill-badge-gold mx-auto mb-4 fx-reveal-item" appScrollReveal>
+          <span class="dot-gold"></span> Premium Experience
         </div>
+        <h2 class="massive-title fx-reveal-item fx-delay-1" appScrollReveal style="font-size: clamp(2.5rem, 5vw, 4rem);">
+          <span class="elite-gold-text">Elite Banking</span> <br>
+          For a Smarter Tomorrow
+        </h2>
+        <p class="lead-text mt-4 mx-auto fx-reveal-item fx-delay-2" appScrollReveal style="max-width: 600px;">
+          You deserve banking that understands your needs and structures solutions that perfectly fit into your lifestyle.
+        </p>
       </div>
     </div>
 
-    <!-- Content Row -->
-    <div class="row g-5 align-items-center">
+    <!-- Glassmorphism Cards Grid -->
+    <div class="row g-4 justify-content-center pb-4">
       
-      <!-- Left side: Video -->
-      <div class="col-lg-6 fx-reveal-item fx-delay-2" appScrollReveal>
-        <div class="elite-image-card shadow-lg">
-          <video src="assets/sbmPhotos/video1.mp4" class="w-100 h-100" style="object-fit: cover; min-height: 400px; border-radius: 12px;" autoplay loop muted playsinline></video>
-          <div class="image-overlay-glow"></div>
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-1" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-diamond"></i></div>
+          <h4>Wealth Management</h4>
+          <p>Expert guidance for growing and protecting your wealth across generations.</p>
         </div>
       </div>
-      
-      <!-- Right side: Benefits -->
-      <div class="col-lg-6 fx-reveal-item fx-delay-3" appScrollReveal>
-        <div class="elite-benefits-container p-4 p-md-5">
-          <h3 class="fw-bold mb-4" style="color: var(--sbm-navy); font-size: 2rem;">Enjoy Elite Banking Benefits</h3>
-          <p class="mb-5 text-muted">You deserve the type of banking that understands your needs and structures solutions that perfectly fit into your lifestyle.</p>
-          
-          <div class="elite-benefits-list">
-            <!-- Item 1 -->
-            <div class="benefit-item" data-benefit="wealth">
-              <div class="icon-box"><i class="fa fa-diamond"></i></div>
-              <div class="benefit-content">
-                <h4>Wealth Management Solutions</h4>
-                <p class="benefit-description">Expert guidance for growing and protecting your wealth</p>
-              </div>
-            </div>
-            <!-- Item 2 -->
-            <div class="benefit-item" data-benefit="relationship">
-              <div class="icon-box"><i class="fa fa-user"></i></div>
-              <div class="benefit-content">
-                <h4>Dedicated Relationship Manager</h4>
-                <p class="benefit-description">Personal banker who understands your unique needs</p>
-              </div>
-            </div>
-            <!-- Item 3 -->
-            <div class="benefit-item" data-benefit="support">
-              <div class="icon-box"><i class="fa fa-user"></i></div>
-              <div class="benefit-content">
-                <h4>Dedicated support</h4>
-                <p class="benefit-description">24/7 priority customer service for all your needs</p>
-              </div>
-            </div>
-            <!-- Item 4 -->
-            <div class="benefit-item" data-benefit="privileges">
-              <div class="icon-box"><i class="fa fa-star"></i></div>
-              <div class="benefit-content">
-                <h4>Exclusive privileges</h4>
-                <p class="benefit-description">Premium benefits and exclusive member rewards</p>
-              </div>
-            </div>
-            <!-- Item 5 -->
-            <div class="benefit-item" data-benefit="personalized">
-              <div class="icon-box"><i class="fa fa-diamond"></i></div>
-              <div class="benefit-content">
-                <h4>Personalized solutions</h4>
-                <p class="benefit-description">Tailored banking solutions designed for you</p>
-              </div>
-            </div>
-            <!-- Item 6 -->
-            <div class="benefit-item" data-benefit="global">
-              <div class="icon-box"><i class="fa fa-globe"></i></div>
-              <div class="benefit-content">
-                <h4>Global access to your account</h4>
-                <p class="benefit-description">Seamless banking across multiple countries</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-5">
-            <button routerLink="/for-you" class="btn btn-elite-gold shadow-sm">EXPLORE MORE ELITE BANKING <i class="fa fa-arrow-right ms-2"></i></button>
-          </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-2" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-user-tie"></i></div>
+          <h4>Dedicated Manager</h4>
+          <p>A personal relationship manager who understands your unique financial needs.</p>
         </div>
       </div>
-      
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-3" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-headset"></i></div>
+          <h4>Priority Support</h4>
+          <p>24/7 dedicated customer service line for immediate, specialized assistance.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-4" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-star"></i></div>
+          <h4>Exclusive Privileges</h4>
+          <p>Premium lifestyle benefits, travel perks, and exclusive member rewards.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-5" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-gem"></i></div>
+          <h4>Bespoke Solutions</h4>
+          <p>Tailored banking and credit solutions designed precisely for you.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-6 col-lg-4 fx-reveal-item fx-delay-6" appScrollReveal>
+        <div class="elite-glass-card h-100">
+          <div class="icon-wrapper"><i class="fa fa-globe"></i></div>
+          <h4>Global Access</h4>
+          <p>Seamless banking and priority services across multiple countries worldwide.</p>
+        </div>
+      </div>
+
     </div>
+
+    <!-- CTA Button -->
+    <div class="row mt-4 pb-5">
+      <div class="col-12 text-center fx-reveal-item fx-delay-7" appScrollReveal>
+        <a routerLink="/for-you" class="btn btn-elite-gold-solid px-5 py-3 shadow-lg">EXPLORE ELITE BANKING <i class="fa fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+
   </div>
 </section>

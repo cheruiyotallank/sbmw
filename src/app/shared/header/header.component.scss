@@ -350,9 +350,10 @@
   margin: 0;
   border-top: 3px solid var(--sbm-blue);
 }
-.breadcrumb-dropdown:hover .dropdown-menu-custom {
+.nav-item-dropdown:hover .dropdown-menu-custom, .breadcrumb-dropdown:hover .dropdown-menu-custom {
   opacity: 1;
   visibility: visible;
+  transform: translateY(15px); /* Add slight drop to match mega menu */
 }
 
 .dropdown-item-custom {

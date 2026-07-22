@@ -1,35 +1,41 @@
-<!-- Modern Split Hero Component -->
-<section class="split-hero-section position-relative overflow-hidden">
+<!-- Full-Screen Immersive Hero Component -->
+<section class="immersive-hero-section position-relative overflow-hidden">
   
-  <!-- Subtle Abstract Background (Instead of full-width image) -->
-  <div class="hero-gradient-bg"></div>
+  <!-- Looping Background Images -->
+  <div class="hero-bg-container position-absolute top-0 start-0 w-100 h-100 z-0">
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <div class="hero-bg-slide w-100 h-100 position-absolute top-0 start-0" [class.active-bg]="i === activeSlide">
+        <img [src]="slide.image" class="w-100 h-100 object-fit-cover" alt="Background Visual">
+      </div>
+    </ng-container>
+    <!-- Dark Gradient Overlay for Text Readability -->
+    <div class="hero-bg-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+  </div>
 
-  <div class="container-fluid px-4 px-xl-5">
-    <div class="row align-items-center min-vh-75 py-5">
+  <!-- Centered Content -->
+  <div class="container-fluid px-4 px-xl-5 position-relative z-3 h-100">
+    <div class="row align-items-center justify-content-center h-100 min-vh-75 py-5 text-center">
       
-      <!-- ========================================== -->
-      <!-- LEFT SIDE (50%): Value Proposition & CTAs  -->
-      <!-- ========================================== -->
-      <div class="col-lg-6 hero-content-left position-relative z-3 pe-lg-5 mb-5 mb-lg-0">
+      <div class="col-lg-8 hero-content-centered position-relative">
         
         <!-- Small Pill Badge -->
-        <div class="hero-pill-badge mb-4">
+        <div class="hero-pill-badge mx-auto mb-4 bg-white text-navy shadow-sm">
           <span class="dot pulse-animation"></span> Next-Gen Banking
         </div>
         
         <!-- Animated Slide Text Content -->
-        <div class="slide-text-wrapper position-relative" style="min-height: 220px;">
+        <div class="slide-text-wrapper position-relative mx-auto" style="min-height: 220px; max-width: 1200px;">
           <ng-container *ngFor="let slide of slides; let i = index">
             <div class="slide-text-content w-100" [class.active-text]="i === activeSlide">
-              <h1 class="hero-title-massive mb-4" *ngIf="slide.title">
+              <h1 class="hero-title-massive mb-4" style="color: var(--sbm-navy);" *ngIf="slide.title">
                 {{ slide.title }}
               </h1>
-              <p class="hero-subtitle lead mb-5">
+              <p class="hero-subtitle lead mb-5 mx-auto" style="color: var(--sbm-navy); max-width: 700px;">
                 Experience seamless digital banking designed to empower your personal and business growth in Kenya and beyond.
               </p>
               <!-- Call to Action -->
-              <div class="hero-actions d-flex flex-wrap gap-3">
-                <a [routerLink]="slide.ctaLink" class="btn-action-primary">
+              <div class="hero-actions d-flex justify-content-center flex-wrap gap-3">
+                <a [routerLink]="slide.ctaLink" class="btn-action-primary px-5 py-3 fs-5 shadow-lg">
                   {{ slide.ctaLabel }} <i class="fa fa-arrow-right ms-2"></i>
                 </a>
               </div>
@@ -37,54 +43,33 @@
           </ng-container>
         </div>
 
-
-
-      </div>
-
-      <!-- ========================================== -->
-      <!-- RIGHT SIDE (50%): Floating Image Showcase  -->
-      <!-- ========================================== -->
-      <div class="col-lg-6 hero-visual-right position-relative mt-4 mt-lg-0 d-flex justify-content-center align-items-center z-3">
-        
-        <!-- Main Floating Image Container (Now freely floating and highly visible) -->
-        <div class="hero-floating-image-container position-relative z-3">
-           <ng-container *ngFor="let slide of slides; let i = index">
-             <img 
-                [src]="slide.image" 
-                class="img-fluid hero-floating-img" 
-                [class.active-image]="i === activeSlide"
-                alt="Hero Visual">
-           </ng-container>
-        </div>
-        
-<!-- 
-        <!-- Floating UI Element 1: Real-time Stats 
-        <div class="floating-ui-card ui-card-top-right glassmorphism-panel shadow-sm position-absolute z-3">
-            <div class="d-flex align-items-center gap-3">
-                <div class="icon-circle bg-sbm-accent text-white"><i class="fa fa-bolt"></i></div>
-                <div>
-                    <strong class="d-block text-sbm-navy">Real-time</strong>
-                    <small class="text-muted">Digital Banking</small>
-                </div>
-            </div>
-        </div>
-
-        Floating UI Element 2: Security Badge 
-        <div class="floating-ui-card ui-card-bottom-left glassmorphism-panel shadow-sm position-absolute z-3">
-            <div class="d-flex align-items-center gap-3">
-                <div class="icon-circle bg-sbm-blue text-white"><i class="fa fa-shield-alt"></i></div>
-                <strong class="text-sbm-navy">100% Secure</strong>
-            </div>
-        </div> 
-      -->
-      
-        
-        <!-- Decorative Background Glow -->
-        <div class="decorative-glow glow-1 position-absolute"></div>
-        <div class="decorative-glow glow-2 position-absolute"></div>
-
       </div>
 
     </div>
   </div>
+
+  <!-- Carousel Controls (Centered Bottom) -->
+  <div class="hero-carousel-controls position-absolute bottom-0 start-50 translate-middle-x pb-4 z-3 w-100">
+    <div class="container-fluid px-4 px-xl-5">
+      <div class="d-flex align-items-center justify-content-center gap-3">
+        <button class="btn btn-icon-round" (click)="previousSlide()" aria-label="Previous">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-indicators-modern d-flex gap-2">
+          <button *ngFor="let slide of slides; let i = index"
+                  class="carousel-dot-modern"
+                  [class.active]="i === activeSlide"
+                  (click)="selectSlide(i)"
+                  [attr.aria-label]="'Slide ' + (i + 1)">
+          </button>
+        </div>
+
+        <button class="btn btn-icon-round" (click)="nextSlide()" aria-label="Next">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
 </section>

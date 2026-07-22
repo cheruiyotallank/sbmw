@@ -1,577 +1,208 @@
-/* Tools to bank with ease */
-.section-header-navy {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--sbm-navy);
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--sbm-blue), var(--sbm-navy));
-    border-radius: 2px;
-  }
+/* ==========================================
+   Tools & Apps Section Redesign
+   ========================================== */
+
+#tools-and-apps {
+  background-color: #ffffff; /* Pure white contrast */
+  padding: 5rem 0;
 }
 
-.navy-tool-btn {
+.massive-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+}
+
+.text-sbm-navy {
+  color: var(--sbm-navy);
+}
+
+/* ------------------------------------------
+   Tools Cards (Modern Squares)
+   ------------------------------------------ */
+.tool-card-modern {
+  background: #ffffff;
+  border: 1px solid rgba(11, 52, 113, 0.05);
+  border-radius: 24px;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(11, 52, 113, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #315383, var(--sbm-navy));
-  color: #ffffff !important;
-  padding: 1.15rem 1.25rem;
-  border-radius: 8px;
-  text-decoration: none;
-  min-height: 100%;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  text-align: left;
-  box-shadow: 0 4px 15px rgba(49, 83, 131, 0.2);
+  justify-content: center;
+  height: 100%;
   position: relative;
   overflow: hidden;
-  
+
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-  }
-  
-  &:hover, &:focus {
-    background: linear-gradient(135deg, var(--sbm-navy), #06214d);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(11, 52, 113, 0.4);
-    outline: none;
-    border-color: rgba(26, 163, 216, 0.3);
-  }
-  
-  &:hover::before {
-    left: 100%;
-  }
-  
-  &:active {
-    transform: translateY(-1px) scale(0.98);
-  }
-}
-
-.tool-icon-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.05rem;
-  flex-shrink: 0;
-  margin-right: 1rem;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  .navy-tool-btn:hover & {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  }
-}
-
-.tool-text {
-  font-weight: 600; /* Matching screenshot weight */
-  font-size: 0.92rem;
-  line-height: 1.3;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  flex-grow: 1;
-}
-
-.tool-icon-wrapper {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  margin-right: 1rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.tool-text {
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.3;
-  font-family: 'Outfit', sans-serif;
-  flex-grow: 1;
-  transition: all 0.3s ease;
-  
-  .navy-tool-btn:hover & {
-    color: rgba(255, 255, 255, 0.9);
-  }
-}
-
-.tool-arrow {
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  color: #ffffff;
-}
-
-/* Beautiful, Professional Card Layout for Tools & Apps */
-.banking-tool-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
-  backdrop-filter: blur(10px);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(11, 52, 113, 0.08), 0 0 20px rgba(26, 163, 216, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 163, 216, 0.03), rgba(80, 213, 255, 0.02));
+    background: linear-gradient(135deg, rgba(26, 163, 216, 0.05) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
-    z-index: 0;
   }
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(11, 52, 113, 0.12), 0 0 30px rgba(26, 163, 216, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(11, 52, 113, 0.12);
     border-color: rgba(26, 163, 216, 0.3);
-  }
-  
-  &:hover::before {
-    opacity: 1;
-  }
-  
-  .card-content {
-    position: relative;
-    z-index: 1;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .tool-icon-wrapper {
+      transform: scale(1.1);
+      background: var(--sbm-navy);
+      color: #fff;
+      box-shadow: 0 15px 30px rgba(11, 52, 113, 0.2);
+    }
   }
 }
 
-.tool-logo-img {
-  width: 120px;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.1));
+.tool-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(26, 163, 216, 0.1), rgba(11, 52, 113, 0.05));
+  color: #1aa3d8; /* SBM Cyan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  .banking-tool-card:hover & {
-    transform: scale(1.1) translateY(-5px);
-    filter: drop-shadow(0 15px 25px rgba(26, 163, 216, 0.3));
+.tool-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sbm-navy);
+  margin: 0;
+}
+
+/* ------------------------------------------
+   App Download Cards (Dark Premium)
+   ------------------------------------------ */
+.app-card-dark {
+  background: linear-gradient(135deg, #050b14 0%, #0b3471 100%);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 20px 50px rgba(11, 52, 113, 0.15);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(11, 52, 113, 0.25);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(26, 163, 216, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
   }
 }
 
-.tool-laptop-img {
-  width: 250px;
-  height: auto;
-  object-fit: contain;
+.app-image-container {
   flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.1));
+}
 
-  .banking-tool-card:hover & {
-    transform: scale(1.05) rotate(-3deg) translateY(-5px);
-    filter: drop-shadow(0 15px 25px rgba(26, 163, 216, 0.3));
-  }
+.app-logo-glow {
+  width: 100px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.app-laptop-img {
+  width: 150px;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4));
 }
 
 .app-info-visual {
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    color: var(--sbm-navy);
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--sbm-navy), var(--sbm-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transition: all 0.3s ease;
-  }
-  
-  .banking-tool-card:hover & h3 {
-    background: linear-gradient(135deg, var(--sbm-blue), #50d5ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
   
   p {
-    font-size: 0.95rem;
-    color: var(--sbm-muted);
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
-    transition: color 0.3s ease;
-  }
-  
-  .banking-tool-card:hover & p {
-    color: var(--sbm-ink);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
   }
 }
 
-/* Badge specific styling */
-.app-badges-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.store-badge-link {
+.pill-badge-cyan {
   display: inline-block;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(26, 163, 216, 0.1), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
+  padding: 0.4rem 1rem;
+  background: rgba(26, 163, 216, 0.2);
+  color: #1aa3d8;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badges & Buttons */
+.store-badge-link {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  margin-right: 15px;
+
   &:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(26, 163, 216, 0.3);
-  }
-  
-  &:hover::before {
-    opacity: 1;
-  }
-  
-  &:active {
-    transform: translateY(-1px) scale(0.98);
   }
 }
 
 .store-badge-img {
-  height: 48px;
+  height: 45px;
   width: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 6px;
-  transition: all 0.3s ease;
 }
 
-/* User specifically wanted Apple Store image larger */
-.apple-badge {
-  height: 58px;
-}
-
-/* Enhance login button */
-.btn-sbm-login {
-  background: linear-gradient(
-      135deg,
-      var(--sbm-blue),
-      var(--sbm-navy)
-  );
-  color: #fff !important;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+.btn-cyan-glow {
+  background: linear-gradient(135deg, #1aa3d8, #008cb7);
+  color: #fff;
   border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  transition:
-      transform .3s ease,
-      box-shadow .3s ease;
-  position: relative;
-  z-index: 3;
-  text-decoration: none;
-  
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 20px rgba(26, 163, 216, 0.3);
+  transition: all 0.3s ease;
+
   &:hover {
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(11, 52, 113, 0.3);
-  }
-  
-  &:active {
-    transform: translateY(-1px);
+    box-shadow: 0 15px 30px rgba(26, 163, 216, 0.5);
   }
 }
 
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-  .section-header-navy {
-    font-size: 1.5rem;
-    
-    &::after {
-      width: 40px;
-    }
-  }
-  
-  .navy-tool-btn {
-    padding: 1rem 1.1rem;
-    font-size: 0.85rem;
-  }
-  
-  .tool-icon-circle {
-    width: 32px;
-    height: 32px;
-    font-size: 0.95rem;
-  }
-  
-  .banking-tool-card {
-    padding: 1.5rem;
-  }
-  
-  .tool-logo-img {
-    width: 100px;
-  }
-  
-  .tool-laptop-img {
-    width: 200px;
-  }
-  
-  .app-info-visual h3 {
-    font-size: 1.2rem;
-  }
-  
-  .app-info-visual p {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .section-header-navy {
-    font-size: 1.3rem;
-    
-    &::after {
-      width: 30px;
-      height: 2px;
-    }
-  }
-  
-  .navy-tool-btn {
-    padding: 0.9rem 1rem;
-    font-size: 0.8rem;
-    min-height: auto;
-  }
-  
-  .tool-icon-circle {
-    width: 30px;
-    height: 30px;
-    font-size: 0.9rem;
-  }
-  
-  .banking-tool-card {
-    padding: 1.25rem;
-  }
-  
-  .tool-logo-img {
-    width: 90px;
-  }
-  
-  .tool-laptop-img {
-    width: 180px;
-  }
-  
-  .app-info-visual h3 {
-    font-size: 1.1rem;
-  }
-  
-  .app-info-visual p {
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .store-badge-img {
-    height: 42px;
-  }
-  
-  .apple-badge {
-    height: 50px;
-  }
-  
-  .btn-sbm-login {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .banking-tool-card {
-    padding: 1.5rem;
-  }
-  
-  .card-content {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .app-badges-row {
-    justify-content: center;
-  }
-  
-  .section-header-navy {
-    font-size: 1.2rem;
-    text-align: center;
-    
-    &::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  
-  .navy-tool-btn {
-    padding: 0.85rem 0.9rem;
-    font-size: 0.75rem;
-  }
-  
-  .tool-logo-img {
-    width: 80px;
-  }
-  
-  .tool-laptop-img {
-    width: 160px;
-  }
-  
-  .app-info-visual h3 {
-    font-size: 1rem;
-  }
-  
-  .app-info-visual p {
-    font-size: 0.75rem;
-  }
-  
-  .store-badge-img {
-    height: 38px;
-  }
-  
-  .apple-badge {
-    height: 45px;
-  }
-}
-
-/* ===========================
-   Entrance Animations
-=========================== */
-
-.navy-tool-btn {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: tool-entrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.navy-tool-btn:nth-child(1) { animation-delay: 0.1s; }
-.navy-tool-btn:nth-child(2) { animation-delay: 0.2s; }
-.navy-tool-btn:nth-child(3) { animation-delay: 0.3s; }
-.navy-tool-btn:nth-child(4) { animation-delay: 0.4s; }
-
-@keyframes tool-entrance {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.banking-tool-card {
+/* Scroll Reveal Utilities */
+.fx-reveal-item {
   opacity: 0;
   transform: translateY(30px);
-  animation: card-entrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.banking-tool-card:nth-child(1) { animation-delay: 0.2s; }
-.banking-tool-card:nth-child(2) { animation-delay: 0.4s; }
-
-@keyframes card-entrance {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  &.revealed {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-/* ===========================
-   Micro-interactions
-=========================== */
-
-.navy-tool-btn {
-  cursor: pointer;
-  
-  &:active {
-    transform: translateY(-1px) scale(0.98);
-  }
-}
-
-.banking-tool-card {
-  cursor: pointer;
-  
-  &:active {
-    transform: translateY(-4px) scale(0.98);
-  }
-}
-
-.store-badge-link {
-  cursor: pointer;
-  
-  &:active {
-    transform: translateY(-1px) scale(0.95);
-  }
-}
-
-.btn-sbm-login {
-  cursor: pointer;
-  
-  &:active {
-    transform: translateY(-1px) scale(0.95);
-  }
-}
-
-/* Add ripple effect to buttons */
-.btn-sbm-login::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease;
-}
-
-.btn-sbm-login:active::after {
-  width: 200px;
-  height: 200px;
-  opacity: 0;
-}
+.fx-delay-1 { transition-delay: 100ms; }
+.fx-delay-2 { transition-delay: 200ms; }
+.fx-delay-3 { transition-delay: 300ms; }
+.fx-delay-4 { transition-delay: 400ms; }

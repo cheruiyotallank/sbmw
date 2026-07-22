@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Hero } from './hero/hero';
-import { BankingCategoriesComponent } from './banking-categories/banking-categories.component';
+import { Solutions } from './solutions/solutions';
 import { EliteBanking } from './elite-banking/elite-banking';
 import { ToolsAndApps } from './tools-and-apps/tools-and-apps';
 
@@ -11,7 +11,7 @@ import { ToolsAndApps } from './tools-and-apps/tools-and-apps';
   imports: [
     CommonModule,
     Hero,
-    BankingCategoriesComponent,
+    Solutions,
     EliteBanking,
     ToolsAndApps
   ],

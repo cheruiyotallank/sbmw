@@ -15,25 +15,25 @@ export class Hero implements OnInit, OnDestroy {
       title: 'Welcome to SBM', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo1.png'
+      image: 'assets/sbmPhotos/photo5.png'
     },
     {
       title: 'Tuma For Free Na Pesalink', 
       ctaLabel: 'Discover more',
       ctaLink: '/for-business',
-      image: 'assets/sbmPhotos/Photo2.jpg'
+      image: 'assets/sbmPhotos/photo6.png'
     },
     {
       title: 'Fly Across Kenya With Jambojet', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/support',
-      image: 'assets/sbmPhotos/photo3.jpg'
+      image: 'assets/sbmPhotos/photo5.png'
     },
     {
       title: 'Busara -> Kids Banking App', 
       ctaLabel: 'Learn more',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo4.png'
+      image: 'assets/sbmPhotos/photo6.png'
     }
   ];
 
