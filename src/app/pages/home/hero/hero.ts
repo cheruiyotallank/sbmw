@@ -15,7 +15,7 @@ export class Hero implements OnInit, OnDestroy {
       title: 'Welcome to SBM', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo5.png'
+      image: 'assets/sbmPhotos/photo12.jpg'
     },
     {
       title: 'Tuma For Free Na Pesalink', 
