@@ -63,6 +63,39 @@
   }
 }
 
+/* WhatsApp Toggle Button */
+.whatsapp-toggle-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 100px; /* Positioned just to the left of the main chat button */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366; /* WhatsApp Official Green */
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 998;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: bounceIn 0.5s ease 0.15s both; /* Slight delay to bounce in after the chat icon */
+}
+
+.whatsapp-toggle-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  color: white;
+}
+
+.whatsapp-toggle-btn:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
 /* Chat Window */
 .chat-window {
   position: fixed;
@@ -277,6 +310,14 @@
     width: 50px;
     height: 50px;
     font-size: 1.3rem;
+  }
+  
+  .whatsapp-toggle-btn {
+    bottom: 80px;
+    right: 80px; /* Shift left to match new chat button size and padding */
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
   }
   
   .chat-window {

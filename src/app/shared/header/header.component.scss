@@ -397,3 +397,15 @@
 @media (min-width: 992px) {
   .mobile-menu-overlay { display: none !important; }
 }
+
+/* Ensure mega menus do not overflow smaller viewports */
+@media (max-width: 1200px) {
+  .mega-menu {
+    max-width: 95vw !important;
+  }
+  .submenu-flyout {
+    max-width: 90vw !important;
+    left: auto !important;
+    right: 0 !important; /* Open to the left if close to edge */
+  }
+}
