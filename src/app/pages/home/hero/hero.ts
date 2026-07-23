@@ -15,7 +15,7 @@ export class Hero implements OnInit, OnDestroy {
       title: 'Welcome to SBM', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo12.jpg'
+      image: 'assets/sbmPhotos/photo15.jpg'
     },
     {
       title: 'Tuma For Free Na Pesalink', 
@@ -27,13 +27,13 @@ export class Hero implements OnInit, OnDestroy {
       title: 'Fly Across Kenya With Jambojet', 
       ctaLabel: 'CLICK TO LEARN MORE',
       ctaLink: '/support',
-      image: 'assets/sbmPhotos/photo11.jpg'
+      image: 'assets/sbmPhotos/photo14.png'
     },
     {
       title: 'Busara -> Kids Banking App', 
       ctaLabel: 'Learn more',
       ctaLink: '/for-you',
-      image: 'assets/sbmPhotos/photo9.jpg'
+      image: 'assets/sbmPhotos/photo16.jpg'
     }
   ];
 
